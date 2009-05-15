@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<install type="component" version="1.5.0">
+  <name>Club</name>
+
+  <creationDate>May 2009</creationDate>
+  <author>Daniel Scott</author>
+  <authorEmail>dan@danieljamesscott.orf</authorEmail>
+  <authorUrl>http://danieljamesscott.org</authorUrl>
+  <copyright>Copyright Daniel Scott 2009</copyright>
+  <license>GPL V3 or later</license>
+  <version>0.1</version>
+  <description>Club member / group management</description>
+
+  <install>
+    <sql>
+      <file charset="utf8" driver="mysql">install.mysql.sql</file>
+    </sql>
+  </install>
+  
+  <uninstall>
+    <sql>
+      <file charset="utf8" driver="mysql">uninstall.mysql.sql</file>
+    </sql>
+  </uninstall>
+  
+  <files>
+    <filename>index.html</filename>
+    <filename>controller.php</filename>
+    <filename>club.php</filename>
+    <folder>models</folder>
+    <filename>router.php</filename>
+    <filename>metadata.xml</filename>
+    <folder>views</folder>
+  </files>
+  
+  <administration>
+    <menu>Club</menu>
+    <submenu>
+      <menu link="option=com_club">Members</menu>
+      <menu link="option=com_club&amp;c=categories">Club Categories</menu>
+    </submenu>
+    
+    <files folder="admin">
+      <folder>tables</folder>
+      <filename>club.php</filename>
+<!--      <folder>elements</folder>-->
+      <folder>models</folder>
+      <folder>views</folder>
+      <filename>config.xml</filename>
+      <folder>controllers</folder>
+      <filename>index.html</filename>
+      <filename>install.mysql.sql</filename>
+      <filename>uninstall.mysql.sql</filename>
+    </files>
+    
+  </administration>
+</install>
