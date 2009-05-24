@@ -41,9 +41,6 @@ class ClubViewCategory extends JView
 		$filter_order		= JRequest::getVar('filter_order','cd.ordering','', 'cmd');
 		$filter_order_Dir	= JRequest::getVar('filter_order_Dir','ASC','','word');
 
-		// Set some defaults against system variables
-		$pparams->def('page_title',	$menu->name);
-
 		// query options
 		$options['aid'] 		= $user->get('aid', 0);
 		$options['category_id']	= $categoryId;
@@ -62,7 +59,7 @@ class ClubViewCategory extends JView
 			$member =& $members[$i];
 
 			$member->link	   = JRoute::_('index.php?option=com_club&view=member&id='.$member->slug);
-			$member->email_to = JHTML::_('email.cloak', $member->email_to);
+			// $member->email_to = JHTML::_('email.cloak', $member->email_to);
 
 			$member->odd	= $k;
 			$member->count = $i;
@@ -88,10 +85,10 @@ class ClubViewCategory extends JView
 		}
 
 		// Set the page title and pathway
-		if ($category->title)
+		if ($category->name)
 		{
 			// Add the category breadcrumbs item
-			$document->setTitle(JText::_('Member').' - '.$category->title);
+			$document->setTitle(JText::_('Member').' - '.$category->name);
 		} else {
 			$document->setTitle(JText::_('Member'));
 		}

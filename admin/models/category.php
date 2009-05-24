@@ -1,7 +1,6 @@
 <?php
 /**
  * @package	Club
- * @subpackage	Content
  * @copyright	Copyright (C) 2005 - 2007 Open Source Matters. All rights reserved.
  * @copyright   Copyright (C) 2009 Daniel Scott (http://danieljamesscott.org). All rights reserved. 
  * @license		GNU/GPL, see LICENSE.php
@@ -18,9 +17,9 @@ defined('_JEXEC') or die();
 jimport('joomla.application.component.model');
 
 /**
- * Member Component Member Model
+ * Club Component Category Model
  */
-class ClubModelMember extends JModel
+class ClubModelCategory extends JModel
 {
 	var $_id = null;
 	var $_data = null;
@@ -39,42 +38,42 @@ class ClubModelMember extends JModel
 	}
 
 	/**
-	 * Method to set the member identifier
+	 * Method to set the category identifier
 	 *
 	 * @access	public
-	 * @param	int Member identifier
+	 * @param	int Category identifier
 	 */
 	function setId($id)
 	{
-		// Set member id and wipe data
+		// Set category id and wipe data
 		$this->_id		= $id;
 		$this->_data	= null;
 	}
 
 	/**
-	 * Method to get a member
+	 * Method to get an category
 	 *
 	 * @since 1.5
 	 */
 	function &getData()
 	{
-		// Load the member data
+		// Load the category data
 		if ($this->_loadData())
 		{
 			// Initialize some variables
 			$user = &JFactory::getUser();
 
 			// Check to see if the category is published
-			if (!$this->_data->cat_pub) {
-				JError::raiseError( 404, JText::_("Resource Not Found") );
-				return;
-			}
+ 			if (!$this->_data->cat_pub) {
+ 				JError::raiseError( 404, JText::_("Resource Not Found") );
+ 				return;
+ 			}
 
-			// Check whether category access level allows access
-			if ($this->_data->cat_access > $user->get('aid', 0)) {
-				JError::raiseError( 403, JText::_('ALERTNOTAUTH') );
-				return;
-			}
+ 			// Check whether artost access level allows access
+ 			if ($this->_data->cat_access > $user->get('arid', 0)) {
+ 				JError::raiseError( 403, JText::_('ALERTNOTAUTH') );
+ 				return;
+ 			}
 		}
 		else  $this->_initData();
 
@@ -82,7 +81,7 @@ class ClubModelMember extends JModel
 	}
 
 	/**
-	 * Tests if member is checked out
+	 * Tests if category is checked out
 	 *
 	 * @access	public
 	 * @param	int	A user id
@@ -102,7 +101,7 @@ class ClubModelMember extends JModel
 	}
 
 	/**
-	 * Method to checkin/unlock the member
+	 * Method to checkin/unlock the category
 	 *
 	 * @access	public
 	 * @return	boolean	True on success
@@ -112,8 +111,8 @@ class ClubModelMember extends JModel
 	{
 		if ($this->_id)
 		{
-			$member = & $this->getTable();
-			if(! $member->checkin($this->_id)) {
+			$category = & $this->getTable();
+			if(! $category->checkin($this->_id)) {
 				$this->setError($this->_db->getErrorMsg());
 				return false;
 			}
@@ -122,7 +121,7 @@ class ClubModelMember extends JModel
 	}
 
 	/**
-	 * Method to checkout/lock the member
+	 * Method to checkout/lock the category
 	 *
 	 * @access	public
 	 * @param	int	$uid	User ID of the user checking the article out
@@ -139,8 +138,8 @@ class ClubModelMember extends JModel
 				$uid	= $user->get('id');
 			}
 			// Lets get to it and checkout the thing...
-			$member = & $this->getTable();
-			if(!$member->checkout($uid, $this->_id)) {
+			$category = & $this->getTable();
+			if(!$category->checkout($uid, $this->_id)) {
 				$this->setError($this->_db->getErrorMsg());
 				return false;
 			}
@@ -151,7 +150,7 @@ class ClubModelMember extends JModel
 	}
 
 	/**
-	 * Method to store the member
+	 * Method to store the category
 	 *
 	 * @access	public
 	 * @return	boolean	True on success
@@ -161,7 +160,7 @@ class ClubModelMember extends JModel
 	{
 		$row =& $this->getTable();
 
-		// Bind the form fields to the web link table
+		// Bind the form fields to the category table
 		if (!$row->bind($data)) {
 			$this->setError($this->_db->getErrorMsg());
 			return false;
@@ -169,11 +168,11 @@ class ClubModelMember extends JModel
 
 		// if new item, order last in appropriate group
 		if (!$row->id) {
-			$where = 'catid = ' . (int) $row->catid ;
+			$where = 'id = ' . (int) $row->id ;
 			$row->ordering = $row->getNextOrder( $where );
 		}
 
-		// Make sure the web link table is valid
+		// Make sure the category table is valid
 		if (!$row->check()) {
 			$this->setError($this->_db->getErrorMsg());
 			return false;
@@ -189,7 +188,7 @@ class ClubModelMember extends JModel
 	}
 
 	/**
-	 * Method to remove a member
+	 * Method to remove a category
 	 *
 	 * @access	public
 	 * @return	boolean	True on success
@@ -203,7 +202,7 @@ class ClubModelMember extends JModel
 		{
 			JArrayHelper::toInteger($cid);
 			$cids = implode( ',', $cid );
-			$query = 'DELETE FROM #__member'
+			$query = 'DELETE FROM #__clubcategories'
 				. ' WHERE id IN ( '.$cids.' )';
 			$this->_db->setQuery( $query );
 			if(!$this->_db->query()) {
@@ -216,7 +215,7 @@ class ClubModelMember extends JModel
 	}
 
 	/**
-	 * Method to (un)publish a member
+	 * Method to (un)publish an category
 	 *
 	 * @access	public
 	 * @return	boolean	True on success
@@ -231,7 +230,7 @@ class ClubModelMember extends JModel
 			JArrayHelper::toInteger($cid);
 			$cids = implode( ',', $cid );
 
-			$query = 'UPDATE #__member'
+			$query = 'UPDATE #__clubcategories'
 				. ' SET published = '.(int) $publish
 				. ' WHERE id IN ( '.$cids.' )'
 				. ' AND ( checked_out = 0 OR ( checked_out = '.(int) $user->get('id').' ) )'
@@ -247,7 +246,7 @@ class ClubModelMember extends JModel
 	}
 
 	/**
-	 * Method to move a member
+	 * Method to move an category
 	 *
 	 * @access	public
 	 * @return	boolean	True on success
@@ -261,16 +260,16 @@ class ClubModelMember extends JModel
 			return false;
 		}
 
-		if (!$row->move( $direction, ' catid = '.(int) $row->catid.' AND published >= 0 ' )) {
-			$this->setError($this->_db->getErrorMsg());
-			return false;
-		}
+ 		if (!$row->move( $direction, ' id = '.(int) $row->id.' AND published >= 0 ' )) {
+ 			$this->setError($this->_db->getErrorMsg());
+ 			return false;
+ 		}
 
 		return true;
 	}
 
 	/**
-	 * Method to move a member
+	 * Method to move an category
 	 *
 	 * @access	public
 	 * @return	boolean	True on success
@@ -286,7 +285,7 @@ class ClubModelMember extends JModel
 		{
 			$row->load( (int) $cid[$i] );
 			// track categories
-			$groupings[] = $row->catid;
+			$groupings[] = $row->id;
 
 			if ($row->ordering != $order[$i])
 			{
@@ -301,14 +300,14 @@ class ClubModelMember extends JModel
 		// execute updateOrder for each parent group
 		$groupings = array_unique( $groupings );
 		foreach ($groupings as $group){
-			$row->reorder('catid = '.(int) $group);
+			$row->reorder('id = '.(int) $group);
 		}
 
 		return true;
 	}
 
 	/**
-	 * Method to load content member data
+	 * Method to load content category data
 	 *
 	 * @access	private
 	 * @return	boolean	True on success
@@ -319,11 +318,11 @@ class ClubModelMember extends JModel
 		// Lets load the content if it doesn't already exist
 		if (empty($this->_data))
 		{
-			$query = 'SELECT w.*, cc.name AS category,'.
-					' cc.published AS cat_pub, cc.access AS cat_access'.
-					' FROM #__member AS w' .
-					' LEFT JOIN #__clubcategories AS cc ON cc.id = w.catid' .
+			$query = 'SELECT w.*,'.
+					' w.published AS cat_pub, w.access AS cat_access'.
+					' FROM #__clubcategories AS w' .
 					' WHERE w.id = '.(int) $this->_id;
+
 			$this->_db->setQuery($query);
 			$this->_data = $this->_db->loadObject();
 			return (boolean) $this->_data;
@@ -332,7 +331,7 @@ class ClubModelMember extends JModel
 	}
 
 	/**
-	 * Method to initialise the member data
+	 * Method to initialise the category data
 	 *
 	 * @access	private
 	 * @return	boolean	True on success
@@ -343,45 +342,18 @@ class ClubModelMember extends JModel
 		// Lets load the content if it doesn't already exist
 		if (empty($this->_data))
 		{
-			$member = new stdClass();
-			$member->id				= 0;
-			$member->catid				= 0;
-			$member->sid				= 0;
-			$member->name				= null;
-			$member->alias               		= null;
-			$member->url				= null;
-			$member->email_to			= null;
-			$member->description			= null;
-			$member->hits				= 0;
-			$member->published			= 0;
-			$member->checked_out			= 0;
-			$member->checked_out_time		= 0;
-			$member->ordering			= 0;
-			$member->archived			= 0;
-			$member->approved			= 0;
-			$member->params				= null;
+			$category = new stdClass();
+			$category->id				= 0;
+			$category->name				= null;
+			$category->alias				= null;
 
-			$member->user_id 			= null;
-			$member->number 		= null;
-			$member->position 		= null;
-			$member->residence 		= null;
-			$member->nicknames 		= null;
-			$member->dob 		= null;
-			$member->nationality 		= null;
-			$member->clubhistory 		= null;
-			$member->honours 		= null;
-			$member->about 		= null;
-			$member->quote 		= null;
-			$member->hometown 		= null;
-			$member->fave_player 		= null;
-			$member->picture 		= null;
-			$member->leaving_date 		= null;
-			$member->joining_date 		= null;
-			$member->first_name 		= null;
-			$member->middle_name 		= null;
-			$member->surname 		= null;
-
-			$this->_data					= $member;
+			// Required fields
+			$category->published			= 0;
+			$category->checked_out			= 0;
+			$category->checked_out_time		= 0;
+			$category->ordering			= 0;
+			$category->params				= null;
+			$this->_data				= $category;
 			return (boolean) $this->_data;
 		}
 		return true;

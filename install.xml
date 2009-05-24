@@ -43,7 +43,7 @@
     <files folder="admin">
       <folder>tables</folder>
       <filename>club.php</filename>
-<!--      <folder>elements</folder>-->
+      <folder>elements</folder>
       <folder>models</folder>
       <folder>views</folder>
       <filename>config.xml</filename>

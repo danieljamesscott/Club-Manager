@@ -1,24 +1,14 @@
 <?php defined( '_JEXEC' ) or die(); ?>
 <?php if ( $this->params->get( 'show_page_title' ) ) : ?>
 <div class="componentheading<?php echo $this->params->get( 'pageclass_sfx' ); ?>">
-<?php if ($this->category->title) :
-	echo $this->params->get('page_title').' - '.$this->category->title;
+<?php if ($this->category->name) :
+	echo $this->params->get('page_title').' - '.$this->category->name;
 else :
 	echo $this->params->get('page_title');
 endif; ?>
 </div>
 <?php endif; ?>
 <div class="contentpane<?php echo $this->params->get( 'pageclass_sfx' ); ?>">
-<?php if ($this->category->image || $this->category->description) : ?>
-	<div class="contentdescription<?php echo $this->params->get( 'pageclass_sfx' ); ?>">
-	<?php if ($this->params->get('image') != -1 && $this->params->get('image') != '') : ?>
-		<img src="images/stories/<?php echo $this->params->get('image'); ?>" align="<?php echo $this->params->get('image_align'); ?>" hspace="6" alt="<?php echo JText::_( 'Members' ); ?>" />
-	<?php elseif ($this->category->image) : ?>
-		<img src="images/stories/<?php echo $this->category->image; ?>" align="<?php echo $this->category->image_position; ?>" hspace="6" alt="<?php echo JText::_( 'Members' ); ?>" />
-	<?php endif; ?>
-	<?php echo $this->category->description; ?>
-	</div>
-<?php endif; ?>
 <script language="javascript" type="text/javascript">
 	function tableOrdering( order, dir, task ) {
 	var form = document.adminForm;
@@ -64,7 +54,14 @@ endif; ?>
 	<?php echo $this->loadTemplate('items'); ?>
 </tbody>
 </table>
-
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<small>Designed by: <a href="http://danieljamesscott.org">http://danieljamesscott.org</a></small>
 <input type="hidden" name="option" value="com_club" />
 <input type="hidden" name="catid" value="<?php echo $this->category->id;?>" />
 <input type="hidden" name="filter_order" value="<?php echo $this->lists['order']; ?>" />

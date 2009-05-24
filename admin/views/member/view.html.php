@@ -91,7 +91,19 @@ class ClubViewMember extends JView
 		$lists['ordering'] 			= JHTML::_('list.specificordering',  $member, $member->id, $query, 1 );
 
 		// build list of categories
-		$lists['catid'] 			= JHTML::_('list.category',  'catid', $option, intval( $member->catid ) );
+		$db =& JFactory::getDBO();
+		$query = 'SELECT id AS value, name AS text'
+		. ' FROM #__clubcategories'
+		. ' WHERE published = 1'
+		. ' ORDER BY ordering'
+		;
+		$db->setQuery( $query );
+		$clubcategories[] = JHTML::_('select.option',  '0', '- '. JText::_( 'Select a Category' ) .' -' );
+		$clubcategories = array_merge( $clubcategories, $db->loadObjectList() );
+		$lists['catid'] = JHTML::_('select.genericlist',   $clubcategories, 'catid', 'class="inputbox" size=1', 'value', 'text', intval( $member->catid ) );
+		//		$lists['catid'] 			= JHTML::_('list.category',  'catid', $option, intval( $member->catid ) );
+
+
 		// build the html select list
 		$lists['published'] 		= JHTML::_('select.booleanlist',  'published', 'class="inputbox"', $member->published );
 

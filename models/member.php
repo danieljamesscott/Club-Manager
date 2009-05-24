@@ -37,7 +37,7 @@ class ClubModelMember extends JModel
 		$groupBy	= @$options['group by'];
 		$orderBy	= @$options['order by'];
 
-		$select = 'a.*, cc.title as category_name';
+		$select = 'a.*, cc.name as category_name';
 		$from	= '#__member AS a';
 
 		$joins[] = 'INNER JOIN #__clubcategories AS cc on cc.id = a.catid';

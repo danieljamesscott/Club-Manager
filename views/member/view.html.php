@@ -62,8 +62,6 @@ class ClubViewMember extends JView
 		$options['category_id']	= $member->catid;
 		$options['order by']	= 'cd.default_con DESC, cd.ordering ASC';
 
-		$members = $modelCat->getMembers( $options );
-
 		// Set the document page title
 		// because the application sets a default page title, we need to get it
 		// right from the menu item itself
@@ -110,7 +108,6 @@ class ClubViewMember extends JView
 		$member->params = new JParameter($member->params);
 
 		$this->assignRef('member', $member);
-		$this->assignRef('members', $members);
 		$this->assignRef('params', $pparams);
 
 		parent::display($tpl);

@@ -3,15 +3,15 @@
 <?php JHTML::_('behavior.tooltip'); ?>
 
 <?php 
-	// Set toolbar items for the page
-	JToolBarHelper::title(   JText::_( 'Member Manager' ), 'generic.png' );
-	JToolBarHelper::publishList();
-	JToolBarHelper::unpublishList();
-	JToolBarHelper::deleteList();
-	JToolBarHelper::editListX();
-	JToolBarHelper::addNewX();
-	JToolBarHelper::preferences('com_club', '360');
-	JToolBarHelper::help( 'screen.member' );
+  // Set toolbar items for the page
+JToolBarHelper::title(   JText::_( 'Catefory Manager' ), 'generic.png' );
+JToolBarHelper::publishList();
+JToolBarHelper::unpublishList();
+JToolBarHelper::deleteList();
+JToolBarHelper::editListX();
+JToolBarHelper::addNewX();
+JToolBarHelper::preferences('com_club', '360');
+JToolBarHelper::help( 'screen.category' );
 ?>
 <form action="index.php" method="post" name="adminForm">
 <table>
@@ -29,6 +29,13 @@
 	</td>
 </tr>
 </table>
+<?php 
+	//print htmlspecialchars( JHTML::_('grid.sort',   'Order by', 'a.ordering', $this->lists['order_Dir'], $this->lists['order'] ));
+?>
+<?php 
+	// echo htmlspecialchars(JHTML::_('grid.order',  $this->items ));
+?>
+
 <div id="editcell">
 	<table class="adminlist">
 	<thead>
@@ -52,9 +59,6 @@
 				<?php echo JHTML::_('grid.sort',   'Order by', 'a.ordering', $this->lists['order_Dir'], $this->lists['order'] ); ?>
 				<?php echo JHTML::_('grid.order',  $this->items ); ?>
 			</th>
-			<th width="10%" class="title">
-				<?php echo JHTML::_('grid.sort',   'Category', 'category', $this->lists['order_Dir'], $this->lists['order'] ); ?>
-			</th>
 			<th width="1%" nowrap="nowrap">
 				<?php echo JHTML::_('grid.sort',   'ID', 'a.id', $this->lists['order_Dir'], $this->lists['order'] ); ?>
 			</th>
@@ -63,7 +67,9 @@
 	<tfoot>
 		<tr>
 			<td colspan="9">
-				<?php echo $this->pagination->getListFooter();?>
+				<?php 
+			// echo $this->pagination->getListFooter();
+?>
 			</td>
 		</tr>
 	</tfoot>
@@ -74,15 +80,13 @@
 	{
 		$row = &$this->items[$i];
 
-				$link 	= JRoute::_( 'index.php?option=com_club&view=member&task=edit&cid[]='. $row->id );
+				$link 	= JRoute::_( 'index.php?option=com_club&c=categories&task=edit&cid[]='. $row->id );
 
 				$checked 	= JHTML::_('grid.checkedout',   $row, $i );
-				//				$access 	= JHTML::_('grid.access',   $row, $i );
 				$published 	= JHTML::_('grid.published', $row, $i );
 
 				$ordering = ($this->lists['order'] == 'a.ordering');
 
-				$row->cat_link 	= JRoute::_( 'index.php?option=com_club&c=categories&task=editA&cid[]='. $row->catid );
 				?>
 				<tr class="<?php echo "row$k"; ?>">
 					<td>
@@ -97,7 +101,7 @@
 						echo $row->name;
 					else :
 						?>
-						<a href="<?php echo $link; ?>" title="<?php echo JText::_( 'Edit Member' ); ?>">
+						<a href="<?php echo $link; ?>" title="<?php echo JText::_( 'Edit Category' ); ?>">
 							<?php echo $row->name; ?></a>
 						<?php
 					endif;
@@ -110,14 +114,10 @@
 						<?php echo $published;?>
 					</td>
 					<td class="order">
-						<span><?php echo $this->pagination->orderUpIcon( $i, ( $row->catid == @$this->items[$i-1]->catid ), 'orderup', 'Move Up', $ordering ); ?></span>
-						<span><?php echo $this->pagination->orderDownIcon( $i, $n, ( $row->catid == @$this->items[$i+1]->catid ), 'orderdown', 'Move Down', $ordering ); ?></span>
+						<span><?php echo $this->pagination->orderUpIcon( $i, 1, 'orderup', 'Move Up', $ordering ); ?></span>
+						<span><?php echo $this->pagination->orderDownIcon( $i, $n, 1, 'orderdown', 'Move Down', $ordering ); ?></span>
 						<?php $disabled = $ordering ?  '' : 'disabled="disabled"'; ?>
 						<input type="text" name="order[]" size="5" value="<?php echo $row->ordering;?>" <?php echo $disabled ?> class="text_area" style="text-align: center" />
-					</td>
-					<td>
-						<a href="<?php echo $row->cat_link; ?>" title="<?php echo JText::_( 'Edit Category' ); ?>">
-							<?php echo $row->category; ?></a>
 					</td>
 					<td align="center">
 						<?php echo $row->id; ?>
@@ -132,6 +132,7 @@
 </div>
 
 <input type="hidden" name="option" value="com_club" />
+<input type="hidden" name="c" value="categories" />
 <input type="hidden" name="task" value="" />
 <input type="hidden" name="boxchecked" value="0" />
 <input type="hidden" name="filter_order" value="<?php echo $this->lists['order']; ?>" />

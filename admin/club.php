@@ -31,6 +31,7 @@ switch ($controllerName) {
    // allow fall through
    
  case 'members' :
+ case 'categories' :
 
    require_once( JPATH_COMPONENT.DS.'controllers'.DS.$controllerName.'.php' );
    $controllerName = 'ClubController'.$controllerName;

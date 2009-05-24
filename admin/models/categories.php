@@ -17,10 +17,9 @@ defined('_JEXEC') or die();
 jimport('joomla.application.component.model');
 
 /**
- * Club Component Member Model
- *
+ * Club Component Category Model
  */
-class ClubModelMembers extends JModel
+class ClubModelCategories extends JModel
 {
 	var $_data = null;
 	var $_total = null;
@@ -44,7 +43,7 @@ class ClubModelMembers extends JModel
 	}
 
 	/**
-	 * Method to get member item data
+	 * Method to get category item data
 	 *
 	 * @access public
 	 * @return array
@@ -62,7 +61,7 @@ class ClubModelMembers extends JModel
 	}
 
 	/**
-	 * Method to get the total number of member items
+	 * Method to get the total number of category items
 	 *
 	 * @access public
 	 * @return integer
@@ -80,7 +79,7 @@ class ClubModelMembers extends JModel
 	}
 
 	/**
-	 * Method to get a pagination object for the member
+	 * Method to get a pagination object for the category
 	 *
 	 * @access public
 	 * @return integer
@@ -103,9 +102,8 @@ class ClubModelMembers extends JModel
 		$where		= $this->_buildContentWhere();
 		$orderby	= $this->_buildContentOrderBy();
 
-		$query = ' SELECT a.*, cc.name AS category, u.name AS editor '
-			. ' FROM #__member AS a '
-			. ' LEFT JOIN #__clubcategories AS cc ON cc.id = a.catid '
+		$query = ' SELECT a.*, u.name AS editor '
+			. ' FROM #__clubcategories AS a '
 			. ' LEFT JOIN #__users AS u ON u.id = a.checked_out '
 			. $where
 			. $orderby
@@ -122,9 +120,9 @@ class ClubModelMembers extends JModel
 		$filter_order_Dir	= $mainframe->getUserStateFromRequest( $option.'filter_order_Dir',	'filter_order_Dir',	'',				'word' );
 
 		if ($filter_order == 'a.ordering'){
-			$orderby 	= ' ORDER BY category, a.ordering '.$filter_order_Dir;
+			$orderby 	= ' ORDER BY a.ordering '.$filter_order_Dir;
 		} else {
-			$orderby 	= ' ORDER BY '.$filter_order.' '.$filter_order_Dir.' , category, a.ordering ';
+			$orderby 	= ' ORDER BY '.$filter_order.' '.$filter_order_Dir.' , a.ordering ';
 		}
 
 		return $orderby;
@@ -134,17 +132,17 @@ class ClubModelMembers extends JModel
 	{
 		global $mainframe, $option;
 
-		$filter_state		= $mainframe->getUserStateFromRequest( $option.'filter_state',		'filter_state',		'',				'word' );
-		$filter_catid		= $mainframe->getUserStateFromRequest( $option.'filter_catid',		'filter_catid',		0,				'int' );
+		$filter_state		= $mainframe->getUserStateFromRequest( $option.'filter_state',		'filter_state',		'',		'word' );
+		$filter_id		= $mainframe->getUserStateFromRequest( $option.'filter_id',		'filter_id',		0,		'int' );
 		$filter_order		= $mainframe->getUserStateFromRequest( $option.'filter_order',		'filter_order',		'a.ordering',	'cmd' );
-		$filter_order_Dir	= $mainframe->getUserStateFromRequest( $option.'filter_order_Dir',	'filter_order_Dir',	'',				'word' );
-		$search				= $mainframe->getUserStateFromRequest( $option.'search',			'search',			'',				'string' );
+		$filter_order_Dir	= $mainframe->getUserStateFromRequest( $option.'filter_order_Dir',	'filter_order_Dir',	'',		'word' );
+		$search			= $mainframe->getUserStateFromRequest( $option.'search',		'search',		'',		'string' );
 		$search				= JString::strtolower( $search );
 
 		$where = array();
 
-		if ($filter_catid > 0) {
-			$where[] = 'a.catid = '.(int) $filter_catid;
+		if ($filter_id > 0) {
+			$where[] = 'a.id = '.(int) $filter_id;
 		}
 		if ($search) {
 			$where[] = 'LOWER(a.name) LIKE '.$this->_db->Quote('%'.$search.'%');

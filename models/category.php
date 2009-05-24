@@ -78,7 +78,7 @@ class ClubModelCategory extends JModel
 		$orderBy	= @$options['order by'];
 
 		$select = 'cd.*, ' .
-				'cc.name AS category_name, cc.description AS category_description, cc.image AS category_image,'.
+				'cc.name AS category_name, '.
 				' CASE WHEN CHAR_LENGTH(cd.alias) THEN CONCAT_WS(\':\', cd.id, cd.alias) ELSE cd.id END as slug ';
 		$from	= '#__member AS cd';
 
