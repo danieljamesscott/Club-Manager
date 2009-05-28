@@ -54,12 +54,7 @@ endif; ?>
 	<?php echo $this->loadTemplate('items'); ?>
 </tbody>
 </table>
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
+
 <br />
 <small>Designed by: <a href="http://danieljamesscott.org">http://danieljamesscott.org</a></small>
 <input type="hidden" name="option" value="com_club" />
