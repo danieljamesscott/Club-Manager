@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="com_club" default="build" basedir=".">
+  <description>Ant Build File for com_club</description>
+
+  <target name="build" depends="clean, init, checkphp, checkxml, build_component, info" />
+  <target name="init" description="creates necessary directories to
+                                   build with" />
+
+  <target name="build_component" description="packages the final component file">
+    <zip destfile="com_club.zip" basedir="." excludes="build.xml, antconfig.txt, com_club.zip .git/** .gitignore" />
+  </target>
+
+  <target name="info" description="prints information">
+    <echo message="Project: com_club" />
+    <tstamp>
+      <format property="buildtime" pattern="yyyy-MM-dd'T'HH:mm:ss" />
+    </tstamp>
+    <echo message="Buildtime: ${buildtime}" />
+  </target>
+
+  <target name="clean" description="Destroys all generated files and dirs.">
+    <delete file="com_club.zip" />
+  </target>
+
+  <target name="checkphp">
+    <apply executable="php" failonerror="true">
+      <arg value="-l" />
+      <fileset dir=".">
+        <include name="**/*.php" />
+      </fileset>
+    </apply>
+  </target>
+
+  <target name="checkxml">
+    <xmlvalidate lenient="yes" warn="yes">
+      <fileset dir=".">
+        <include name="**/*.xml" />
+      </fileset>
+    </xmlvalidate>
+  </target>
+
+</project>
