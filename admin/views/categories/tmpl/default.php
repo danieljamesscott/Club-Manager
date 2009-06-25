@@ -4,7 +4,7 @@
 
 <?php 
   // Set toolbar items for the page
-JToolBarHelper::title(   JText::_( 'Catefory Manager' ), 'generic.png' );
+JToolBarHelper::title(   JText::_( 'Category Manager' ), 'generic.png' );
 JToolBarHelper::publishList();
 JToolBarHelper::unpublishList();
 JToolBarHelper::deleteList();
