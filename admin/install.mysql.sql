@@ -29,7 +29,7 @@ CREATE TABLE IF NOT EXISTS `jos_member` (
   `access` tinyint(3) unsigned NOT NULL default '0',
   `alias` varchar(255) NOT NULL default '',
   `email_to` varchar(60) default '',
-  `description` varchar(500) default '',
+  `description` text(500) default '',
   PRIMARY KEY  (`id`)
 );
 
