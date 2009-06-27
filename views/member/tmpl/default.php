@@ -30,6 +30,11 @@ Number: <?php echo $this->member->number; ?>
 Name: <?php echo $this->member->name; ?>
 </li>
 <?php endif; ?>
+<?php if ( $this->member->email_to ) : ?>
+<li>
+Name: <?php echo $this->member->email_to; ?>
+</li>
+<?php endif; ?>
 </ul>
 </td>
 <td>

@@ -2,7 +2,7 @@
 /**
 * @package	Club
 * @copyright	Copyright (C) 2005 - 2007 Open Source Matters. All rights reserved.
- * @copyright   Copyright (C) 2009 Daniel Scott (http://danieljamesscott.org). All rights reserved. 
+* @copyright   Copyright (C) 2009 Daniel Scott (http://danieljamesscott.org). All rights reserved. 
 * @license		GNU/GPL, see LICENSE.php
 * Joomla! is free software. This version may have been modified pursuant
 * to the GNU General Public License, and as distributed it includes or
@@ -69,26 +69,28 @@ class TableMember extends JTable
 	 */
 	var $params = null;
 
-  var $name 			= null;
-  var $user_id 			= null;
+  var $name 		= null;
+  var $user_id 		= null;
   var $number 		= null;
-  var $position 		= null;
-  var $residence 		= null;
-  var $nicknames 		= null;
+  var $position 	= null;
+  var $residence 	= null;
+  var $nicknames 	= null;
   var $dob 		= null;
-  var $nationality 		= null;
-  var $clubhistory 		= null;
+  var $nationality 	= null;
+  var $clubhistory 	= null;
   var $honours 		= null;
   var $about 		= null;
   var $quote 		= null;
-  var $hometown 		= null;
-  var $fave_player 		= null;
+  var $hometown 	= null;
+  var $fave_player 	= null;
   var $picture 		= null;
-  var $leaving_date 		= null;
-  var $joining_date 		= null;
-  var $first_name 		= null;
-  var $middle_name 		= null;
+  var $leaving_date 	= null;
+  var $joining_date 	= null;
+  var $first_name 	= null;
+  var $middle_name 	= null;
   var $surname 		= null;
+  var $email_to		= null;
+  var $description	= null;
 
 	/**
 	 * Constructor
