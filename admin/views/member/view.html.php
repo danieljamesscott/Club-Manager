@@ -110,6 +110,12 @@ class ClubViewMember extends JView
 		// build list of users
 		$lists['user_id'] 			= JHTML::_('list.users',  'user_id', $member->user_id, 1, NULL, 'name', 0 );
 
+
+		if ( !JFolder::create(JPATH_ROOT.DS."images".DS."members") ) {
+		  echo "Failed to create directory images/members";
+		  $mainframe->close();
+		}
+
 		$lists['picture'] 			= JHTMLList::images('picture', $member->picture, '', 'images/members' );
 
 		//clean member data
