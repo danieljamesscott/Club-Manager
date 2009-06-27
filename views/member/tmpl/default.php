@@ -4,12 +4,14 @@
 	<?php echo $this->params->get( 'page_title' ); ?>
 </div>
 <?php endif; ?>
-<table width="100%" cellpadding="0" cellspacing="0" border="0" class="contentpane<?php echo $this->params->get( 'pageclass_sfx' ); ?>">
+<table width="100%" cellpadding="1" cellspacing="1" border="0" class="contentpane<?php echo $this->params->get( 'pageclass_sfx' ); ?>">
 <?php if ( $this->member->name ) : ?>
 <tr>
-<td width="50%" class="contentheading<?php echo $this->params->get( 'pageclass_sfx' ); ?>">
+<th width="50%" class="contentheading<?php echo $this->params->get( 'pageclass_sfx' ); ?>">
 <?php echo $this->member->name; ?>
-</td>
+</th>
+<th width="50%">
+</th>
 </tr>
 <?php endif; ?>
 <tr>
@@ -28,6 +30,11 @@ Number: <?php echo $this->member->number; ?>
 <?php if ( $this->member->name ) : ?>
 <li>
 Name: <?php echo $this->member->name; ?>
+</li>
+<?php endif; ?>
+<?php if ( $this->member->email_to ) : ?>
+<li>
+Email: <?php echo $this->member->email_to; ?>
 </li>
 <?php endif; ?>
 </ul>
@@ -107,10 +114,119 @@ Favourite Player:
 	</td>
 </tr>
 <?php endif; ?>
+
+<?php if ( $this->member->height_weight ) : ?>
+<tr>
+	<td>
+Height/Weight:
+	</td>
+	<td>
+		<?php echo $this->member->height_weight; ?>
+	</td>
+</tr>
+<?php endif; ?>
+
+<?php if ( $this->member->school ) : ?>
+<tr>
+	<td>
+School Attending:
+	</td>
+	<td>
+		<?php echo $this->member->school; ?>
+	</td>
+</tr>
+<?php endif; ?>
+
+<?php if ( $this->member->graduating_class ) : ?>
+<tr>
+	<td>
+Graduating Class:
+	</td>
+	<td>
+		<?php echo $this->member->graduating_class; ?>
+	</td>
+</tr>
+<?php endif; ?>
+
+<?php if ( $this->member->gpa ) : ?>
+<tr>
+	<td>
+GPA:
+	</td>
+	<td>
+		<?php echo $this->member->gpa; ?>
+	</td>
+</tr>
+<?php endif; ?>
+
+<?php if ( $this->member->sat_act ) : ?>
+<tr>
+	<td>
+SAT/ACT:
+	</td>
+	<td>
+		<?php echo $this->member->sat_act; ?>
+	</td>
+</tr>
+<?php endif; ?>
+
+<?php if ( $this->member->level_rating ) : ?>
+<tr>
+	<td>
+Level/Rating:
+	</td>
+	<td>
+		<?php echo $this->member->level_rating; ?>
+	</td>
+</tr>
+<?php endif; ?>
+
+<?php if ( $this->member->decision_makers ) : ?>
+<tr>
+	<td>
+Decision Makers:
+	</td>
+	<td>
+		<?php echo $this->member->decision_makers; ?>
+	</td>
+</tr>
+<?php endif; ?>
+
+<?php if ( $this->member->travel_schedule ) : ?>
+<tr>
+	<td>
+Travel Schedule:
+	</td>
+	<td>
+		<?php echo $this->member->travel_schedule; ?>
+	</td>
+</tr>
+<?php endif; ?>
+
+<?php if ( $this->member->hobbies ) : ?>
+<tr>
+	<td>
+Hobbies/Interests:
+	</td>
+	<td>
+		<?php echo $this->member->hobbies; ?>
+	</td>
+</tr>
+<?php endif; ?>
+
+<?php if ( $this->member->conference ) : ?>
+<tr>
+	<td>
+Conference of Interest:
+	</td>
+	<td>
+		<?php echo $this->member->conference; ?>
+	</td>
+</tr>
+<?php endif; ?>
 </tbody>
 </table>
 	</td>
-	<td></td>
 	</tr>
 <tr>
 <td>
@@ -139,9 +255,17 @@ Favourite Player:
 <?php if ( $this->member->quote ) : ?>
 <h3>Quote</h3>
 		<?php echo nl2br($this->member->quote); ?>
-<br/>
 <?php endif; ?>
 </td>
+</tr>
+<tr>
+<td>
+<?php if ( $this->member->description ) : ?>
+<h3>Description</h3>
+		<?php echo nl2br($this->member->description); ?>
+<?php endif; ?>
+</td>
+<td/>
 </tr>
 </table>
 

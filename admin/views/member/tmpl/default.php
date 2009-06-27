@@ -127,7 +127,6 @@
 				?>
 	</table>
 	</fieldset>
-
 			<fieldset class="adminform">
 				<legend><?php echo JText::_( 'Information' ); ?></legend>
 
@@ -233,6 +232,110 @@
 						<input class="inputbox" type="text" name="fave_player" id="fave_player" size="40" maxlength="200" value="<?php echo $this->member->fave_player; ?>" />
 					</td>
 				</tr>
+
+
+				<tr>
+					<td class="key">
+						<label for="height_weight">
+							<?php echo JText::_( 'Height/Weight' ); ?>:
+						</label>
+					</td>
+					<td>
+						<input class="inputbox" type="text" name="height_weight" id="height_weight" size="40" maxlength="200" value="<?php echo $this->member->height_weight; ?>" />
+					</td>
+				</tr>
+				<tr>
+					<td class="key">
+						<label for="school_attending">
+							<?php echo JText::_( 'School Attending' ); ?>:
+						</label>
+					</td>
+					<td>
+						<input class="inputbox" type="text" name="school_attending" id="school_attending" size="40" maxlength="200" value="<?php echo $this->member->school_attending; ?>" />
+					</td>
+				</tr>
+				<tr>
+					<td class="key">
+						<label for="graduating_class">
+							<?php echo JText::_( 'Graduating Class' ); ?>:
+						</label>
+					</td>
+					<td>
+						<input class="inputbox" type="text" name="graduating_class" id="graduating_class" size="40" maxlength="200" value="<?php echo $this->member->graduating_class; ?>" />
+					</td>
+				</tr>
+				<tr>
+					<td class="key">
+						<label for="gpa">
+							<?php echo JText::_( 'GPA' ); ?>:
+						</label>
+					</td>
+					<td>
+						<input class="inputbox" type="text" name="gpa" id="gpa" size="40" maxlength="200" value="<?php echo $this->member->gpa; ?>" />
+					</td>
+				</tr>
+				<tr>
+					<td class="key">
+						<label for="sat_act">
+							<?php echo JText::_( 'SAT/ACT' ); ?>:
+						</label>
+					</td>
+					<td>
+						<input class="inputbox" type="text" name="sat_act" id="sat_act" size="40" maxlength="200" value="<?php echo $this->member->sat_act; ?>" />
+					</td>
+				</tr>
+				<tr>
+					<td class="key">
+						<label for="level_rating">
+							<?php echo JText::_( 'Level/Rating' ); ?>:
+						</label>
+					</td>
+					<td>
+						<input class="inputbox" type="text" name="level_rating" id="level_rating" size="40" maxlength="200" value="<?php echo $this->member->level_rating; ?>" />
+					</td>
+				</tr>
+				<tr>
+					<td class="key">
+						<label for="decision_makers">
+							<?php echo JText::_( 'Decision Makers' ); ?>:
+						</label>
+					</td>
+					<td>
+						<input class="inputbox" type="text" name="decision_makers" id="decision_makers" size="40" maxlength="200" value="<?php echo $this->member->decision_makers; ?>" />
+					</td>
+				</tr>
+				<tr>
+					<td class="key">
+						<label for="travel_schedule">
+							<?php echo JText::_( 'Travel Schedule' ); ?>:
+						</label>
+					</td>
+					<td>
+						<input class="inputbox" type="text" name="travel_schedule" id="travel_schedule" size="40" maxlength="200" value="<?php echo $this->member->travel_schedule; ?>" />
+					</td>
+				</tr>
+				<tr>
+					<td class="key">
+						<label for="hobbies">
+							<?php echo JText::_( 'Hobbies' ); ?>:
+						</label>
+					</td>
+					<td>
+						<input class="inputbox" type="text" name="hobbies" id="hobbies" size="40" maxlength="200" value="<?php echo $this->member->hobbies; ?>" />
+					</td>
+				</tr>
+				<tr>
+					<td class="key">
+						<label for="conference">
+							<?php echo JText::_( 'Conference of Interest' ); ?>:
+						</label>
+					</td>
+					<td>
+						<input class="inputbox" type="text" name="conference" id="conference" size="40" maxlength="200" value="<?php echo $this->member->conference; ?>" />
+					</td>
+				</tr>
+
+
 				<tr>
 					<td class="key">
 						<label for="first_name">
@@ -336,8 +439,8 @@
 						</script>
 					</td>
 				</tr>
-				</table>
-			</fieldset>
+		</table>
+	</fieldset>
 
 </div>
 <div class="col50">

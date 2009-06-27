@@ -69,25 +69,35 @@ class TableMember extends JTable
 	 */
 	var $params = null;
 
-  var $name 			= null;
-  var $user_id 			= null;
+  var $name 		= null;
+  var $user_id 		= null;
   var $number 		= null;
-  var $position 		= null;
-  var $residence 		= null;
-  var $nicknames 		= null;
+  var $position 	= null;
+  var $residence 	= null;
+  var $nicknames 	= null;
   var $dob 		= null;
-  var $nationality 		= null;
-  var $clubhistory 		= null;
+  var $nationality 	= null;
+  var $clubhistory 	= null;
   var $honours 		= null;
   var $about 		= null;
   var $quote 		= null;
-  var $hometown 		= null;
-  var $fave_player 		= null;
+  var $hometown 	= null;
+  var $fave_player 	= null;
+  var $height_weight 	= null;
+  var $school_attending	= null;
+  var $graduating_class	= null;
+  var $gpa		= null;
+  var $sat_act		= null;
+  var $level_rating	= null;
+  var $decision_makers	= null;
+  var $travel_schedule	= null;
+  var $hobbies		= null;
+  var $conference	= null;
   var $picture 		= null;
-  var $leaving_date 		= null;
-  var $joining_date 		= null;
-  var $first_name 		= null;
-  var $middle_name 		= null;
+  var $leaving_date 	= null;
+  var $joining_date 	= null;
+  var $first_name 	= null;
+  var $middle_name 	= null;
   var $surname 		= null;
 
 	/**
