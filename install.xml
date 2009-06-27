@@ -8,7 +8,7 @@
   <authorUrl>http://danieljamesscott.org</authorUrl>
   <copyright>Copyright Daniel Scott 2009</copyright>
   <license>GPL V3 or later</license>
-  <version>0.2</version>
+  <version>0.3</version>
   <description>Club member / group management</description>
 
   <install>
@@ -16,13 +16,13 @@
       <file charset="utf8" driver="mysql">install.mysql.sql</file>
     </sql>
   </install>
-  
+
   <uninstall>
     <sql>
       <file charset="utf8" driver="mysql">uninstall.mysql.sql</file>
     </sql>
   </uninstall>
-  
+
   <files>
     <filename>index.html</filename>
     <filename>controller.php</filename>
@@ -32,14 +32,14 @@
     <filename>metadata.xml</filename>
     <folder>views</folder>
   </files>
-  
+
   <administration>
     <menu>Club</menu>
     <submenu>
       <menu link="option=com_club">Members</menu>
       <menu link="option=com_club&amp;c=categories">Club Categories</menu>
     </submenu>
-    
+
     <files folder="admin">
       <folder>tables</folder>
       <filename>club.php</filename>
@@ -52,6 +52,6 @@
       <filename>install.mysql.sql</filename>
       <filename>uninstall.mysql.sql</filename>
     </files>
-    
+
   </administration>
 </install>
