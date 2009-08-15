@@ -1,4 +1,4 @@
-CREATE TABLE IF NOT EXISTS `jos_member` (
+CREATE TABLE IF NOT EXISTS `#__member` (
   `id` int(12) NOT NULL auto_increment,
   `number` int(12) default NULL,
   `name` varchar(50) NOT NULL default '',
@@ -43,7 +43,7 @@ CREATE TABLE IF NOT EXISTS `jos_member` (
   PRIMARY KEY  (`id`)
 );
 
-CREATE TABLE IF NOT EXISTS `jos_clubcategories` (
+CREATE TABLE IF NOT EXISTS `#__clubcategories` (
   `id` int(12) NOT NULL auto_increment,
   `name` varchar(50) NOT NULL default '',
   `alias` varchar(255) NOT NULL default '',

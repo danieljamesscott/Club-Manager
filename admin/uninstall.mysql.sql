@@ -1,2 +1,2 @@
-##DROP TABLE IF EXISTS `jos_member`;
-##DROP TABLE IF EXISTS `jos_clubcategories`;
+##DROP TABLE IF EXISTS `#__member`;
+##DROP TABLE IF EXISTS `#__clubcategories`;
