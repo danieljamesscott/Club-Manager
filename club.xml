@@ -8,7 +8,7 @@
   <authorUrl>http://danieljamesscott.org</authorUrl>
   <copyright>Copyright Daniel Scott 2009</copyright>
   <license>GPL V3 or later</license>
-  <version>0.4</version>
+  <version>0.5</version>
   <description>Club member / group management</description>
 
   <install>
@@ -32,6 +32,10 @@
     <filename>metadata.xml</filename>
     <folder>views</folder>
   </files>
+
+  <languages>
+    <language tag="en-GB">en-GB.com_club.ini</language>
+  </languages>
 
   <administration>
     <menu>Club</menu>

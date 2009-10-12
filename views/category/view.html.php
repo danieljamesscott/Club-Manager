@@ -88,9 +88,9 @@ class ClubViewCategory extends JView
 		if ($category->name)
 		{
 			// Add the category breadcrumbs item
-			$document->setTitle(JText::_('Member').' - '.$category->name);
+			$document->setTitle(JText::_('MEMBER').' - '.$category->name);
 		} else {
-			$document->setTitle(JText::_('Member'));
+			$document->setTitle(JText::_('MEMBER'));
 		}
 
 		// table ordering

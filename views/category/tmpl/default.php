@@ -56,7 +56,7 @@ endif; ?>
 </table>
 
 <br />
-<small>Designed by: <a href="http://danieljamesscott.org">http://danieljamesscott.org</a></small>
+<small><?php echo JText::_("DESIGNEDBY")?><a href="http://danieljamesscott.org">http://danieljamesscott.org</a></small>
 <input type="hidden" name="option" value="com_club" />
 <input type="hidden" name="catid" value="<?php echo $this->category->id;?>" />
 <input type="hidden" name="filter_order" value="<?php echo $this->lists['order']; ?>" />

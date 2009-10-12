@@ -55,7 +55,7 @@ class ClubViewMember extends JView
 
 		// check if we have a member
 		if (!is_object( $member )) {
-		  JError::raiseError( 404, 'Member not found' );
+		  JError::raiseError( 404, JText::_("MEMBER_NOT_FOUND"));
 		  return;
 		}
 
@@ -66,7 +66,7 @@ class ClubViewMember extends JView
 		// because the application sets a default page title, we need to get it
 		// right from the menu item itself
 		if (is_object( $menu ) && isset($menu->query['view']) && $menu->query['view'] == 'member' && isset($menu->query['id']) && $menu->query['id'] == $member->id) {
-			$menu_params = new JParameter( $menu->params );			
+			$menu_params = new JParameter( $menu->params );
 			if (!$menu_params->get( 'page_title')) {
 				$pparams->set('page_title',	$member->name);
 			}

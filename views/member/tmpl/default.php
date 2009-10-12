@@ -24,17 +24,17 @@
 <ul>
 <?php if ( $this->member->number ) : ?>
 <li>
-Number: <?php echo $this->member->number; ?>
+   <?php echo JText::_("NUMBER") + $this->member->number; ?>
 </li>
 <?php endif; ?>
 <?php if ( $this->member->name ) : ?>
 <li>
-Name: <?php echo $this->member->name; ?>
+   <?php echo JText::_("NAME") + $this->member->name; ?>
 </li>
 <?php endif; ?>
 <?php if ( $this->member->email_to ) : ?>
 <li>
-Email: <?php echo $this->member->email_to; ?>
+   <?php echo JText::_("EMAIL") + $this->member->email_to; ?>
 </li>
 <?php endif; ?>
 </ul>
@@ -45,7 +45,7 @@ Email: <?php echo $this->member->email_to; ?>
 <?php if ( $this->member->nicknames ) : ?>
 <tr>
 	<td>
-Nicknames:
+   <?php echo JText::_("NICNNAMES"); ?>
 	</td>
         <td>
 		<?php echo $this->member->nicknames; ?>
@@ -55,7 +55,7 @@ Nicknames:
 <?php if ( $this->member->position ) : ?>
 <tr>
 	<td>
-Position:
+   <?php echo JText::_("POSITION"); ?>
 	</td>
 	<td>
 		<?php echo $this->member->position; ?>
@@ -65,7 +65,7 @@ Position:
 <?php if ( $this->member->dob ) : ?>
 <tr>
 	<td>
-D.O.B:
+   <?php echo JText::_("DOB"); ?>
 	</td>
 	<td>
 		<?php echo $this->member->dob; ?>
@@ -75,7 +75,7 @@ D.O.B:
 <?php if ( $this->member->residence ) : ?>
 <tr>
 	<td>
-Current Residence:
+   <?php echo JText::_("CURRESIDENCE"); ?>
 	</td>
 	<td>
 		<?php echo $this->member->residence; ?>
@@ -85,7 +85,7 @@ Current Residence:
 <?php if ( $this->member->hometown ) : ?>
 <tr>
 	<td>
-Hometown:
+   <?php echo JText::_("HOMETOWN"); ?>
 	</td>
 	<td>
 		<?php echo $this->member->hometown; ?>
@@ -95,7 +95,7 @@ Hometown:
 <?php if ( $this->member->nationality ) : ?>
 <tr>
 	<td>
-Nationality:
+   <?php echo JText::_("NATIONALITY"); ?>
 	</td>
 	<td>
 		<?php echo $this->member->nationality; ?>
@@ -107,7 +107,7 @@ Nationality:
 <?php if ( $this->member->fave_player ) : ?>
 <tr>
 	<td>
-Favourite Player:
+   <?php echo JText::_("FAVEPLAYER"); ?>
 	</td>
 	<td>
 		<?php echo $this->member->fave_player; ?>
@@ -118,7 +118,7 @@ Favourite Player:
 <?php if ( $this->member->height_weight ) : ?>
 <tr>
 	<td>
-Height/Weight:
+   <?php echo JText::_("HEIGHTWEIGHT"); ?>
 	</td>
 	<td>
 		<?php echo $this->member->height_weight; ?>
@@ -129,7 +129,7 @@ Height/Weight:
 <?php if ( $this->member->school ) : ?>
 <tr>
 	<td>
-School Attending:
+   <?php echo JText::_("SCHOOL"); ?>
 	</td>
 	<td>
 		<?php echo $this->member->school; ?>
@@ -140,7 +140,7 @@ School Attending:
 <?php if ( $this->member->graduating_class ) : ?>
 <tr>
 	<td>
-Graduating Class:
+   <?php echo JText::_("CLASS"); ?>
 	</td>
 	<td>
 		<?php echo $this->member->graduating_class; ?>
@@ -151,7 +151,7 @@ Graduating Class:
 <?php if ( $this->member->gpa ) : ?>
 <tr>
 	<td>
-GPA:
+   <?php echo JText::_("GPA"); ?>
 	</td>
 	<td>
 		<?php echo $this->member->gpa; ?>
@@ -162,7 +162,7 @@ GPA:
 <?php if ( $this->member->sat_act ) : ?>
 <tr>
 	<td>
-SAT/ACT:
+   <?php echo JText::_("SATACT"); ?>
 	</td>
 	<td>
 		<?php echo $this->member->sat_act; ?>
@@ -173,7 +173,7 @@ SAT/ACT:
 <?php if ( $this->member->level_rating ) : ?>
 <tr>
 	<td>
-Level/Rating:
+   <?php echo JText::_("LEVEL"); ?>
 	</td>
 	<td>
 		<?php echo $this->member->level_rating; ?>
@@ -184,7 +184,7 @@ Level/Rating:
 <?php if ( $this->member->decision_makers ) : ?>
 <tr>
 	<td>
-Decision Makers:
+   <?php echo JText::_("DECISIONMAKERS"); ?>
 	</td>
 	<td>
 		<?php echo $this->member->decision_makers; ?>
@@ -195,7 +195,7 @@ Decision Makers:
 <?php if ( $this->member->travel_schedule ) : ?>
 <tr>
 	<td>
-Travel Schedule:
+   <?php echo JText::_("SCHEDULE"); ?>
 	</td>
 	<td>
 		<?php echo $this->member->travel_schedule; ?>
@@ -206,7 +206,7 @@ Travel Schedule:
 <?php if ( $this->member->hobbies ) : ?>
 <tr>
 	<td>
-Hobbies/Interests:
+   <?php echo JText::_("HOBBIES"); ?>
 	</td>
 	<td>
 		<?php echo $this->member->hobbies; ?>
@@ -217,7 +217,7 @@ Hobbies/Interests:
 <?php if ( $this->member->conference ) : ?>
 <tr>
 	<td>
-Conference of Interest:
+   <?php echo JText::_("CONFERENCEINTEREST"); ?>
 	</td>
 	<td>
 		<?php echo $this->member->conference; ?>
@@ -231,14 +231,14 @@ Conference of Interest:
 <tr>
 <td>
 <?php if ( $this->member->clubhistory ) : ?>
-<h3>Club History</h3>
+<h3><?php echo JText::_("CLUBHISTORY"); ?></h3>
 		<?php echo nl2br($this->member->clubhistory); ?>
 <br/>
 <?php endif; ?>
 </td>
 <td>
 <?php if ( $this->member->about ) : ?>
-<h3>About</h3>
+<h3><?php echo JText::_("ABOUT"); ?></h3>
 		<?php echo nl2br($this->member->about); ?>
 <br/>
 <?php endif; ?>
@@ -247,13 +247,13 @@ Conference of Interest:
 <tr>
 <td>
 <?php if ( $this->member->honours ) : ?>
-<h3>Honours</h3>
+<h3><?php echo JText::_("HONOURS"); ?></h3>
 		<?php echo nl2br($this->member->honours); ?>
 <?php endif; ?>
 </td>
 <td>
 <?php if ( $this->member->quote ) : ?>
-<h3>Quote</h3>
+<h3><?php echo JText::_("QUOTE"); ?></h3>
 		<?php echo nl2br($this->member->quote); ?>
 <?php endif; ?>
 </td>
@@ -261,7 +261,7 @@ Conference of Interest:
 <tr>
 <td>
 <?php if ( $this->member->description ) : ?>
-<h3>Description</h3>
+<h3><?php echo JText::_("DESCRIPTION"); ?></h3>
 		<?php echo nl2br($this->member->description); ?>
 <?php endif; ?>
 </td>
@@ -270,4 +270,4 @@ Conference of Interest:
 </table>
 
 <br />
-<small>Designed by: <a href="http://danieljamesscott.org">http://danieljamesscott.org</a></small>
+<small><?php echo JText::_("DESIGNEDBY")?><a href="http://danieljamesscott.org">http://danieljamesscott.org</a></small>
