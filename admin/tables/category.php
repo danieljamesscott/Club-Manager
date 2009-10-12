@@ -65,6 +65,9 @@ class TableCategory extends JTable
 	var $params = null;
 
   var $name 			= null;
+  var $coach 			= null;
+  var $trainer 			= null;
+  var $picture 			= null;
 
   // Category variables
 

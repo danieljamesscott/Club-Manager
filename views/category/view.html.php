@@ -102,6 +102,10 @@ class ClubViewCategory extends JView
 		$lists['order'] = $filter_order;
 		$selected = '';
 
+		if($category->picture) {
+		  $category->picture = JHTML::_('image.site', 'con_address.png', 	'/images/categories/', $category->picture, 	'/images/categories/', $category->name . ' picture', 'align="middle" width="250" height="209"');
+		}
+
 		jimport('joomla.html.pagination');
 		$pagination = new JPagination($total, $limitstart, $limit);
 
@@ -110,7 +114,7 @@ class ClubViewCategory extends JView
 		$this->assignRef('pagination',	$pagination);
 		$this->assignRef('category',	$category);
 		$this->assignRef('params',		$pparams);
-		
+
 		$this->assign('action',		$uri->toString());
 
 		parent::display($tpl);

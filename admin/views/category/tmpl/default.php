@@ -106,8 +106,37 @@
 
 			<fieldset class="adminform">
 				<legend><?php echo JText::_( 'Information' ); ?></legend>
-
 				<table class="admintable">
+					<tr>
+						<td class="key">
+							<label for="coach">
+								<?php echo JText::_( 'Coach' ); ?>:
+							</label>
+						</td>
+						<td>
+						<input class="inputbox" type="text" name="coach" id="coach" size="40" maxlength="100" value="<?php echo $this->category->coach; ?>" />
+						</td>
+					</tr>
+					<tr>
+						<td class="key">
+							<label for="trainer">
+								<?php echo JText::_( 'Trainer' ); ?>:
+							</label>
+						</td>
+						<td>
+						<input class="inputbox" type="text" name="trainer" id="trainer" size="40" maxlength="100" value="<?php echo $this->category->trainer; ?>" />
+						</td>
+					</tr>
+				<tr>
+					<td class="key">
+						<label for="picture">
+							<?php echo JText::_( 'Picture' ); ?>:
+						</label>
+					</td>
+					<td >
+						<?php echo $this->lists['picture']; ?>
+					</td>
+				</tr>
 				</table>
 			</fieldset>
 

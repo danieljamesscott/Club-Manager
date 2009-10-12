@@ -54,5 +54,8 @@ CREATE TABLE IF NOT EXISTS `#__clubcategories` (
   `ordering` int(11) NOT NULL default '0',
   `params` text NOT NULL,
   `access` tinyint(3) unsigned NOT NULL default '0',
+  `picture` varchar(200) default NULL,
+  `coach` varchar(100) default NULL,
+  `trainer` varchar(100) default NULL,
   PRIMARY KEY  (`id`)
 );

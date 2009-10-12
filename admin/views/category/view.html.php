@@ -89,6 +89,12 @@ class ClubViewCategory extends JView
 		// build the html select list
 		$lists['published'] 		= JHTML::_('select.booleanlist',  'published', 'class="inputbox"', $category->published );
 
+		if ( !JFolder::create(JPATH_ROOT.DS."images".DS."categories") ) {
+		  echo "Failed to create directory images/categories";
+		  $mainframe->close();
+		}
+
+		$lists['picture'] 			= JHTMLList::images('picture', $category->picture, '', 'images/categories' );
 		//clean category data
 		jimport('joomla.filter.output');
 		JFilterOutput::objectHTMLSafe( $category, ENT_QUOTES, 'description' );

@@ -344,36 +344,46 @@ class ClubModelMember extends JModel
 		if (empty($this->_data))
 		{
 			$member = new stdClass();
-			$member->id				= 0;
-			$member->catid				= 0;
-			$member->sid				= 0;
-			$member->name				= null;
-			$member->alias               		= null;
-			$member->url				= null;
-			$member->email_to			= null;
-			$member->description			= null;
-			$member->hits				= 0;
-			$member->published			= 0;
-			$member->checked_out			= 0;
-			$member->checked_out_time		= 0;
-			$member->ordering			= 0;
-			$member->archived			= 0;
-			$member->approved			= 0;
-			$member->params				= null;
+			$member->id			= 0;
+			$member->catid			= 0;
+			$member->sid			= 0;
+			$member->name			= null;
+			$member->alias               	= null;
+			$member->url			= null;
+			$member->email_to		= null;
+			$member->description		= null;
+			$member->hits			= 0;
+			$member->published		= 0;
+			$member->checked_out		= 0;
+			$member->checked_out_time	= 0;
+			$member->ordering		= 0;
+			$member->archived		= 0;
+			$member->approved		= 0;
+			$member->params			= null;
 
-			$member->user_id 			= null;
+			$member->user_id 		= null;
 			$member->number 		= null;
 			$member->position 		= null;
 			$member->residence 		= null;
 			$member->nicknames 		= null;
-			$member->dob 		= null;
+			$member->dob 			= null;
 			$member->nationality 		= null;
 			$member->clubhistory 		= null;
 			$member->honours 		= null;
-			$member->about 		= null;
-			$member->quote 		= null;
+			$member->about 			= null;
+			$member->quote 			= null;
 			$member->hometown 		= null;
 			$member->fave_player 		= null;
+                        $member->height_weight 		= null;
+                        $member->school_attending	= null;
+                        $member->graduating_class	= null;
+                        $member->gpa			= null;
+                        $member->sat_act		= null;
+                        $member->level_rating		= null;
+                        $member->decision_makers	= null;
+                        $member->travel_schedule	= null;
+                        $member->hobbies		= null;
+                        $member->conference		= null;
 			$member->picture 		= null;
 			$member->leaving_date 		= null;
 			$member->joining_date 		= null;
@@ -381,7 +391,7 @@ class ClubModelMember extends JModel
 			$member->middle_name 		= null;
 			$member->surname 		= null;
 
-			$this->_data					= $member;
+			$this->_data			= $member;
 			return (boolean) $this->_data;
 		}
 		return true;

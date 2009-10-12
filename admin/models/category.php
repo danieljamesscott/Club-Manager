@@ -337,26 +337,28 @@ class ClubModelCategory extends JModel
 	 * @return	boolean	True on success
 	 * @since	1.5
 	 */
-	function _initData()
-	{
-		// Lets load the content if it doesn't already exist
-		if (empty($this->_data))
-		{
-			$category = new stdClass();
-			$category->id				= 0;
-			$category->name				= null;
-			$category->alias				= null;
+	function _initData() {
+          // Lets load the content if it doesn't already exist
+          if (empty($this->_data)) {
+            $category = new stdClass();
+            $category->id			= 0;
+            $category->name			= null;
+            $category->alias			= null;
 
-			// Required fields
-			$category->published			= 0;
-			$category->checked_out			= 0;
-			$category->checked_out_time		= 0;
-			$category->ordering			= 0;
-			$category->params				= null;
-			$this->_data				= $category;
-			return (boolean) $this->_data;
-		}
-		return true;
+            $category->picture			= null;
+            $category->coach			= null;
+            $category->trainer			= null;
+
+            // Required fields
+            $category->published		= 0;
+            $category->checked_out		= 0;
+            $category->checked_out_time		= 0;
+            $category->ordering			= 0;
+            $category->params			= null;
+            $this->_data				= $category;
+            return (boolean) $this->_data;
+          }
+          return true;
 	}
 }
 ?>

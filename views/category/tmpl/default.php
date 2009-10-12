@@ -8,6 +8,14 @@ else :
 endif; ?>
 </div>
 <?php endif; ?>
+<?php echo $this->category->picture; ?>
+<br/><br/>
+<?php if ( $this->category->coach ) : ?>
+   <?php echo JText::_("COACH") . $this->category->coach; ?>
+<?php endif; ?>
+<?php if ( $this->category->trainer ) : ?>
+   <?php echo JText::_("TRAINER") . $this->category->trainer; ?>
+<?php endif; ?>
 <div class="contentpane<?php echo $this->params->get( 'pageclass_sfx' ); ?>">
 <script language="javascript" type="text/javascript">
 	function tableOrdering( order, dir, task ) {

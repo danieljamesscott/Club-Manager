@@ -24,17 +24,17 @@
 <ul>
 <?php if ( $this->member->number ) : ?>
 <li>
-   <?php echo JText::_("NUMBER") + $this->member->number; ?>
+   <?php echo JText::_("NUMBER") . $this->member->number; ?>
 </li>
 <?php endif; ?>
 <?php if ( $this->member->name ) : ?>
 <li>
-   <?php echo JText::_("NAME") + $this->member->name; ?>
+   <?php echo JText::_("NAME") . $this->member->name; ?>
 </li>
 <?php endif; ?>
 <?php if ( $this->member->email_to ) : ?>
 <li>
-   <?php echo JText::_("EMAIL") + $this->member->email_to; ?>
+   <?php echo JText::_("EMAIL") . $this->member->email_to; ?>
 </li>
 <?php endif; ?>
 </ul>
@@ -45,7 +45,7 @@
 <?php if ( $this->member->nicknames ) : ?>
 <tr>
 	<td>
-   <?php echo JText::_("NICNNAMES"); ?>
+   <?php echo JText::_("NICKNAMES"); ?>
 	</td>
         <td>
 		<?php echo $this->member->nicknames; ?>
@@ -126,13 +126,13 @@
 </tr>
 <?php endif; ?>
 
-<?php if ( $this->member->school ) : ?>
+<?php if ( $this->member->school_attending ) : ?>
 <tr>
 	<td>
    <?php echo JText::_("SCHOOL"); ?>
 	</td>
 	<td>
-		<?php echo $this->member->school; ?>
+		<?php echo $this->member->school_attending; ?>
 	</td>
 </tr>
 <?php endif; ?>
