@@ -35,7 +35,7 @@ class ClubViewMember extends JView
 		$menus	= &JSite::getMenu();
 		$menu    = $menus->getActive();
 
-		$pparams = &$mainframe->getParams('com_member');
+		$pparams = &$mainframe->getParams('com_club');
 
 		// Push a model into the view
 		$model		= &$this->getModel();
