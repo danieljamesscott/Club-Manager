@@ -101,7 +101,7 @@ class ClubViewMember extends JView
 		if($member->picture) {
 		  $member->picture = JHTML::_('image.site', 'con_address.png', 	'/images/members/', $member->picture, 	'/images/members/', $member->name . ' picture', 'align="middle" width="250" height="209"');
 		} else {
-		  $member->picture = "No picture available";
+		  $member->picture = JText::_("NOPICTURE");
 		}
 
 		// Adds parameter handling
