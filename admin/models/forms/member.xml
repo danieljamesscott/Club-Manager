@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form addrulepath="/administrator/components/com_club/models/rules">
+  <fieldset addfieldpath="/administrator/components/com_club/models/fields" >
+    <field
+        name="id"
+        type="hidden"
+        />
+    <field
+        name="name"
+        type="text"
+        label="COM_CLUB_MEMBER_NAME_LABEL"
+        description="COM_CLUB_MEMBER_NAME_DESC"
+        size="40"
+        class="inputbox validate-name"
+        validate="name"
+        required="true"
+        default=""
+        />
+    <field
+        name="alias"
+        type="text"
+        label="COM_CLUB_MEMBER_ALIAS_LABEL"
+        description="COM_CLUB_MEMBER_ALIAS_DESC"
+        size="40"
+        class="inputbox validate-alias"
+        validate="alias"
+        required="true"
+        default=""
+        />
+    <field name="picture" type="media" directory="club"
+           hide_none="1" label="COM_CLUB_MEMBER_PICTURE_LABEL"
+           size="40"
+           description="COM_CLUB_MEMBER_PICTURE_DESC" />
+    <field
+        name="number"
+        type="number"
+        label="COM_CLUB_MEMBER_NUMBER_LABEL"
+        description="COM_CLUB_MEMBER_NUMBER_DESC"
+        size="40"
+        class="inputbox validate-number"
+        validate="number"
+        default=""
+        />
+    <field
+        name="position"
+        type="text"
+        label="COM_CLUB_MEMBER_POSITION_LABEL"
+        description="COM_CLUB_MEMBER_POSITION_DESC"
+        size="40"
+        class="inputbox validate-name"
+        validate="name"
+        default=""
+        />
+    <field
+        name="residence"
+        type="text"
+        label="COM_CLUB_MEMBER_RESIDENCE_LABEL"
+        description="COM_CLUB_MEMBER_RESIDENCE_DESC"
+        size="40"
+        class="inputbox validate-name"
+        validate="name"
+        default=""
+        />
+    <field
+        name="nicknames"
+        type="text"
+        label="COM_CLUB_MEMBER_NICKNAMES_LABEL"
+        description="COM_CLUB_MEMBER_NICKNAMES_DESC"
+        size="40"
+        class="inputbox validate-name"
+        validate="name"
+        default=""
+        />
+    <field
+        name="dob"
+        type="date"
+        label="COM_CLUB_MEMBER_DOB_LABEL"
+        description="COM_CLUB_MEMBER_DOB_DESC"
+        size="40"
+        class="inputbox validate-date"
+        validate="date"
+        default=""
+        />
+    <field
+        name="nationality"
+        type="text"
+        label="COM_CLUB_MEMBER_NATIONALITY_LABEL"
+        description="COM_CLUB_MEMBER_NATIONALITY_DESC"
+        size="40"
+        class="inputbox validate-name"
+        validate="name"
+        default=""
+        />
+    <field
+        name="club_history"
+        type="textarea"
+        label="COM_CLUB_MEMBER_CLUB_HISTORY_LABEL"
+        description="COM_CLUB_MEMBER_CLUB_HISTORY_DESC"
+        class="inputbox validate-name"
+        validate="name"
+        default=""
+        />
+    <field
+        name="honours"
+        type="textarea"
+        label="COM_CLUB_MEMBER_HONOURS_LABEL"
+        description="COM_CLUB_MEMBER_HONOURS_DESC"
+        class="inputbox validate-name"
+        validate="name"
+        default=""
+        />
+    <field
+        name="about"
+        type="textarea"
+        label="COM_CLUB_MEMBER_ABOUT_LABEL"
+        description="COM_CLUB_MEMBER_ABOUT_DESC"
+        class="inputbox validate-name"
+        validate="name"
+        default=""
+        />
+    <field
+        name="quote"
+        type="textarea"
+        label="COM_CLUB_MEMBER_QUOTE_LABEL"
+        description="COM_CLUB_MEMBER_QUOTE_DESC"
+        class="inputbox validate-name"
+        validate="name"
+        default=""
+        />
+    <field
+        name="home_town"
+        type="text"
+        label="COM_CLUB_MEMBER_HOME_TOWN_LABEL"
+        description="COM_CLUB_MEMBER_HOME_TOWN_DESC"
+        size="40"
+        class="inputbox validate-name"
+        validate="name"
+        default=""
+        />
+    <field
+        name="fave_player"
+        type="textarea"
+        label="COM_CLUB_MEMBER_FAVE_PLAYER_LABEL"
+        description="COM_CLUB_MEMBER_FAVE_PLAYER_DESC"
+        class="inputbox validate-name"
+        validate="name"
+        default=""
+        />
+    <field
+        name="height_weight"
+        type="text"
+        label="COM_CLUB_MEMBER_HEIGHT_WEIGHT_LABEL"
+        description="COM_CLUB_MEMBER_HEIGHT_WEIGHT_DESC"
+        size="40"
+        class="inputbox validate-name"
+        validate="name"
+        default=""
+        />
+    <field
+        name="school_attending"
+        type="text"
+        label="COM_CLUB_MEMBER_SCHOOL_ATTENDING_LABEL"
+        description="COM_CLUB_MEMBER_SCHOOL_ATTENDING_DESC"
+        size="40"
+        class="inputbox validate-name"
+        validate="name"
+        default=""
+        />
+    <field
+        name="graduating_class"
+        type="text"
+        label="COM_CLUB_MEMBER_GRADUATING_CLASS_LABEL"
+        description="COM_CLUB_MEMBER_GRADUATING_CLASS_DESC"
+        size="40"
+        class="inputbox validate-name"
+        validate="name"
+        default=""
+        />
+    <field
+        name="gpa"
+        type="text"
+        label="COM_CLUB_MEMBER_GPA_LABEL"
+        description="COM_CLUB_MEMBER_GPA_DESC"
+        size="40"
+        class="inputbox validate-name"
+        validate="name"
+        default=""
+        />
+    <field
+        name="sat_act"
+        type="text"
+        label="COM_CLUB_MEMBER_SAT_ACT_LABEL"
+        description="COM_CLUB_MEMBER_SAT_ACT_DESC"
+        size="40"
+        class="inputbox validate-name"
+        validate="name"
+        default=""
+        />
+    <field
+        name="level_rating"
+        type="text"
+        label="COM_CLUB_MEMBER_LEVEL_RATING_LABEL"
+        description="COM_CLUB_MEMBER_LEVEL_RATING_DESC"
+        size="40"
+        class="inputbox validate-name"
+        validate="name"
+        default=""
+        />
+    <field
+        name="decision_makers"
+        type="textarea"
+        label="COM_CLUB_MEMBER_DECISION_MAKERS_LABEL"
+        description="COM_CLUB_MEMBER_DECISION_MAKERS_DESC"
+        class="inputbox validate-name"
+        validate="name"
+        default=""
+        />
+    <field
+        name="travel_schedule"
+        type="textarea"
+        label="COM_CLUB_MEMBER_TRAVEL_SCHEDULE_LABEL"
+        description="COM_CLUB_MEMBER_TRAVEL_SCHEDULE_DESC"
+        class="inputbox validate-name"
+        validate="name"
+        default=""
+        />
+    <field
+        name="hobbies"
+        type="textarea"
+        label="COM_CLUB_MEMBER_HOBBIES_LABEL"
+        description="COM_CLUB_MEMBER_HOBBIES_DESC"
+        class="inputbox validate-name"
+        validate="name"
+        default=""
+        />
+    <field
+        name="conference"
+        type="textarea"
+        label="COM_CLUB_MEMBER_CONFERENCE_LABEL"
+        description="COM_CLUB_MEMBER_CONFERENCE_DESC"
+        class="inputbox validate-name"
+        validate="name"
+        default=""
+        />
+    <field
+        name="leaving_date"
+        type="date"
+        label="COM_CLUB_MEMBER_LEAVING_DATE_LABEL"
+        description="COM_CLUB_MEMBER_LEAVING_DATE_DESC"
+        size="40"
+        class="inputbox validate-date"
+        validate="date"
+        default=""
+        />
+    <field
+        name="joining_date"
+        type="date"
+        label="COM_CLUB_MEMBER_JOINING_DATE_LABEL"
+        description="COM_CLUB_MEMBER_JOINING_DATE_DESC"
+        size="40"
+        class="inputbox validate-date"
+        validate="date"
+        default=""
+        />
+    <field
+        name="first_name"
+        type="text"
+        label="COM_CLUB_MEMBER_FIRST_NAME_LABEL"
+        description="COM_CLUB_MEMBER_FIRST_NAME_DESC"
+        size="40"
+        class="inputbox validate-name"
+        validate="name"
+        default=""
+        />
+    <field
+        name="middle_name"
+        type="text"
+        label="COM_CLUB_MEMBER_MIDDLE_NAME_LABEL"
+        description="COM_CLUB_MEMBER_MIDDLE_NAME_DESC"
+        size="40"
+        class="inputbox validate-name"
+        validate="name"
+        default=""
+        />
+    <field
+        name="last_name"
+        type="text"
+        label="COM_CLUB_MEMBER_LAST_NAME_LABEL"
+        description="COM_CLUB_MEMBER_LAST_NAME_DESC"
+        size="40"
+        class="inputbox validate-name"
+        validate="name"
+        default=""
+        />
+  </fieldset>
+</form>

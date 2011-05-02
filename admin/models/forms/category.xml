@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form addrulepath="/administrator/components/com_club/models/rules">
+  <fieldset addfieldpath="/administrator/components/com_club/models/fields" >
+    <field
+        name="id"
+        type="hidden"
+        />
+    <field
+        name="name"
+        type="text"
+        label="COM_CLUB_CATEGORY_NAME_LABEL"
+        description="COM_CLUB_CATEGORY_NAME_DESC"
+        size="40"
+        class="inputbox validate-name"
+        validate="name"
+        required="true"
+        default=""
+        />
+    <field
+        name="alias"
+        type="text"
+        label="COM_CLUB_CATEGORY_ALIAS_LABEL"
+        description="COM_CLUB_CATEGORY_ALIAS_DESC"
+        size="40"
+        class="inputbox validate-alias"
+        validate="alias"
+        required="true"
+        default=""
+        />
+    <field name="picture" type="media" directory="club"
+           hide_none="1" label="COM_CLUB_CATEGORY_PICTURE_LABEL"
+           size="40"
+           description="COM_CLUB_CATEGORY_PICTURE_DESC" />
+    <field
+        name="coach"
+        type="text"
+        label="COM_CLUB_CATEGORY_COACH_LABEL"
+        description="COM_CLUB_CATEGORY_COACH_DESC"
+        size="40"
+        class="inputbox validate-name"
+        validate="name"
+        default=""
+        />
+    <field
+        name="trainer"
+        type="text"
+        label="COM_CLUB_CATEGORY_TRAINER_LABEL"
+        description="COM_CLUB_CATEGORY_TRAINER_DESC"
+        size="40"
+        class="inputbox validate-name"
+        validate="name"
+        default=""
+        />
+    <field
+        name="manager"
+        type="text"
+        label="COM_CLUB_CATEGORY_MANAGER_LABEL"
+        description="COM_CLUB_CATEGORY_MANAGER_DESC"
+        size="40"
+        class="inputbox validate-name"
+        validate="name"
+        default=""
+        />
+  </fieldset>
+</form>

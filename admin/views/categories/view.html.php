@@ -1,61 +1,59 @@
 <?php
-/**
-* @package     Club
-* @copyright   Copyright (C) 2005 - 2007 Open Source Matters. All rights reserved.
-* @copyright   Copyright (C) 2009 Daniel Scott (http://danieljamesscott.org). All rights reserved. 
-* @license		GNU/GPL, see LICENSE.php
-* Joomla! is free software. This version may have been modified pursuant
-* to the GNU General Public License, and as distributed it includes or
-* is derivative of works licensed under the GNU General Public License or
-* other free or open source software licenses.
-* See COPYRIGHT.php for copyright notices and details.
-*/
+// No direct access to this file
+defined('_JEXEC') or die('Restricted access');
 
-// Check to ensure this file is included in Joomla!
-defined('_JEXEC') or die();
-
-jimport( 'joomla.application.component.view');
+// import Joomla view library
+jimport('joomla.application.component.view');
 
 /**
- * HTML View class for the club component
- *
- * @package	Club
+ * Categories View
  */
 class ClubViewCategories extends JView {
+
+  protected $items;
+  protected $pagination;
+  protected $state;
+
+  /**
+   * Categories view display method
+   * @return void
+   */
   function display($tpl = null) {
-    $model =& $this->getModel();
-    global $mainframe, $option;
-    
-    $db	=& JFactory::getDBO();
-    $uri	=& JFactory::getURI();
-    
-    $filter_state	= $mainframe->getUserStateFromRequest( $option.'filter_state',		'filter_state',		'',		'word' );
-    $filter_order	= $mainframe->getUserStateFromRequest( $option.'filter_order',		'filter_order',		'a.ordering',	'cmd' );
-    $filter_order_Dir	= $mainframe->getUserStateFromRequest( $option.'filter_order_Dir',	'filter_order_Dir',	'',		'word' );
-    $search		= $mainframe->getUserStateFromRequest( $option.'search',		'search',		'',		'string' );
-    $search		= JString::strtolower( $search );
-    
     // Get data from the model
-    $items	= & $this->get( 'Data');
-    $total	= & $this->get( 'Total');
-    $pagination	= & $this->get( 'Pagination' );
-    
-    // state filter
-    $lists['state']	= JHTML::_('grid.state',  $filter_state );
-    
-    // table ordering
-    $lists['order_Dir'] = $filter_order_Dir;
-    $lists['order'] = $filter_order;
-    
-    // search filter
-    $lists['search']= $search;
-    
-    $this->assignRef('user',		JFactory::getUser());
-    $this->assignRef('lists',		$lists);
-    $this->assignRef('items',		$items);
-    $this->assignRef('pagination',	$pagination);
-    
+    $this->items = $this->get('Items');
+    $this->pagination = $this->get('Pagination');
+    $this->state = $this->get('State');
+
+    // Check for errors.
+    if (count($errors = $this->get('Errors'))) {
+      JError::raiseError(500, implode('<br />', $errors));
+      return false;
+    }
+
+    // Set the toolbar
+    $this->addToolBar();
+
+    // Display the template
     parent::display($tpl);
   }
+
+  /**
+   * Setting the toolbar
+   */
+  protected function addToolBar() {
+    JToolBarHelper::title(JText::_('COM_CLUB_MANAGER_CATEGORIES'));
+    JToolBarHelper::deleteList('', 'categories.delete');
+    JToolBarHelper::editList('category.edit');
+    JToolBarHelper::addNew('category.add');
+  }
+
+  /**
+   * Method to set up the document properties
+   *
+   * @return void
+   */
+  protected function setDocument() {
+    $document = JFactory::getDocument();
+    $document->setTitle(JText::_('COM_CLUB_ADMINISTRATION'));
+  }
 }
-?>

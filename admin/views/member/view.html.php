@@ -1,135 +1,66 @@
 <?php
-/**
-* @package	Club
-* @copyright	Copyright (C) 2005 - 2007 Open Source Matters. All rights reserved.
-* @copyright   Copyright (C) 2009 Daniel Scott (http://danieljamesscott.org). All rights reserved. 
-* @license		GNU/GPL, see LICENSE.php
-* Joomla! is free software. This version may have been modified pursuant
-* to the GNU General Public License, and as distributed it includes or
-* is derivative of works licensed under the GNU General Public License or
-* other free or open source software licenses.
-* See COPYRIGHT.php for copyright notices and details.
-*/
+// No direct access to this file
+defined('_JEXEC') or die('Restricted access');
 
-// Check to ensure this file is included in Joomla!
-defined('_JEXEC') or die();
-
-jimport( 'joomla.application.component.view');
+// import Joomla view library
+jimport('joomla.application.component.view');
 
 /**
- * HTML View class for the Member component
- *
- * @static
- * @package		Joomla
- * @subpackage	Member
- * @since 1.0
+ * Member View
  */
-class ClubViewMember extends JView
-{
-	function display($tpl = null)
-	{
-		global $mainframe;
+class ClubViewMember extends JView {
+  /**
+   * display method of Member view
+   * @return void
+   */
+  public function display($tpl = null) {
+    // get the Data
+    $form = $this->get('Form');
+    $item = $this->get('Item');
+    $script = $this->get('Script');
 
-		if($this->getLayout() == 'default') {
-			$this->_displayForm($tpl);
-			return;
-		}
+    // Check for errors.
+    if (count($errors = $this->get('Errors'))) {
+      JError::raiseError(500, implode('<br />', $errors));
+      return false;
+    }
+    // Assign the Data
+    $this->form = $form;
+    $this->item = $item;
+    $this->script = $script;
 
-		//get the member
-		$member =& $this->get('data');
+    // Set the toolbar
+    $this->addToolBar();
 
-		if ($member->url) {
-			// redirects to url if matching id found
-			$mainframe->redirect($member->url);
-		}
+    // Display the template
+    parent::display($tpl);
 
-		parent::display($tpl);
-	}
+    // Set the document
+    $this->setDocument();
+  }
 
-	function _displayForm($tpl)
-	{
-		global $mainframe, $option;
+  /**
+   * Setting the toolbar
+   */
+  protected function addToolBar() {
+    JRequest::setVar('hidemainmenu', true);
+    $isNew = ($this->item->id == 0);
+    JToolBarHelper::title($isNew ? JText::_('COM_CLUB_MEMBER_NEW') : JText::_('COM_CLUB_MEMBER_EDIT'));
+    JToolBarHelper::save('member.save');
+    JToolBarHelper::cancel('member.cancel', $isNew ? 'JTOOLBAR_CANCEL' : 'JTOOLBAR_CLOSE');
+  }
 
-		$db		=& JFactory::getDBO();
-		$uri 	=& JFactory::getURI();
-		$user 	=& JFactory::getUser();
-		$model	=& $this->getModel();
-
-
-		$lists = array();
-
-		//get the member
-		$member	=& $this->get('data');
-		$isNew		= ($member->id < 1);
-
-		// fail if checked out not by 'me'
-		if ($model->isCheckedOut( $user->get('id') )) {
-			$msg = JText::sprintf( 'DESCBEINGEDITTED', JText::_( 'The member' ), $member->title );
-			$mainframe->redirect( 'index.php?option='. $option, $msg );
-		}
-
-		// Edit or Create?
-		if (!$isNew)
-		{
-			$model->checkout( $user->get('id') );
-		}
-		else
-		{
-			// initialise new record
-			$member->published = 1;
-			$member->approved 	= 1;
-			$member->order 	= 0;
-			$member->catid 	= JRequest::getVar( 'catid', 0, 'post', 'int' );
-		}
-
-		// build the html select list for ordering
-		$query = 'SELECT ordering AS value, name AS text'
-			. ' FROM #__member'
-			. ' WHERE catid = ' . (int) $member->catid
-			. ' ORDER BY ordering';
-
-		$lists['ordering'] 			= JHTML::_('list.specificordering',  $member, $member->id, $query, 1 );
-
-		// build list of categories
-		$db =& JFactory::getDBO();
-		$query = 'SELECT id AS value, name AS text'
-		. ' FROM #__clubcategories'
-		. ' WHERE published = 1'
-		. ' ORDER BY ordering'
-		;
-		$db->setQuery( $query );
-		$clubcategories[] = JHTML::_('select.option',  '0', '- '. JText::_( 'Select a Category' ) .' -' );
-		$clubcategories = array_merge( $clubcategories, $db->loadObjectList() );
-		$lists['catid'] = JHTML::_('select.genericlist',   $clubcategories, 'catid', 'class="inputbox" size=1', 'value', 'text', intval( $member->catid ) );
-		//		$lists['catid'] 			= JHTML::_('list.category',  'catid', $option, intval( $member->catid ) );
-
-
-		// build the html select list
-		$lists['published'] 		= JHTML::_('select.booleanlist',  'published', 'class="inputbox"', $member->published );
-
-		// build list of users
-		$lists['user_id'] 			= JHTML::_('list.users',  'user_id', $member->user_id, 1, NULL, 'name', 0 );
-
-
-		if ( !JFolder::create(JPATH_ROOT.DS."images".DS."members") ) {
-		  echo "Failed to create directory images/members";
-		  $mainframe->close();
-		}
-
-		$lists['picture'] 			= JHTMLList::images('picture', $member->picture, '', 'images/members' );
-
-		//clean member data
-		jimport('joomla.filter.output');
-		JFilterOutput::objectHTMLSafe( $member, ENT_QUOTES, 'description' );
-
-		$file 	= JPATH_COMPONENT.DS.'models'.DS.'member.xml';
-		$params = new JParameter( $member->params, $file );
-
-		$this->assignRef('lists',		$lists);
-		$this->assignRef('member',		$member);
-		$this->assignRef('params',		$params);
-
-		parent::display($tpl);
-	}
+  /**
+   * Method to set up the document properties
+   *
+   * @return void
+   */
+  protected function setDocument() {
+    $isNew = ($this->item->id < 1);
+    $document = JFactory::getDocument();
+    $document->setTitle($isNew ? JText::_('COM_CLUB_MEMBER_CREATING') : JText::_('COM_CLUB_MEMBER_EDITING'));
+    $document->addScript(JURI::root() . $this->script);
+    $document->addScript(JURI::root() . "/administrator/components/com_club/views/member/submitbutton.js");
+    JText::script('COM_CLUB_MEMBER_ERROR_UNACCEPTABLE');
+  }
 }
-?>

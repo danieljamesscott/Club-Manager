@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form addrulepath="/administrator/components/com_club/models/rules">
+  <fieldset addfieldpath="/administrator/components/com_club/models/fields" >
+    <field
+        name="id"
+        type="hidden"
+        />
+    <field
+        name="category_id"
+        type="category"
+        label="COM_CLUB_CATEGORY_FIELD_LABEL"
+        description="COM_CLUB_CATEGORY_FIELD_DESC"
+        />
+    <field
+        name="member_id"
+        type="member"
+        label="COM_CLUB_MEMBER_FIELD_LABEL"
+        description="COM_CLUB_MEMBER_FIELD_DESC"
+        />
+  </fieldset>
+</form>
