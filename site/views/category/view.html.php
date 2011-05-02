@@ -17,16 +17,15 @@ class ClubViewCategory extends JView {
   // Overwriting JView display method
   function display($tpl = null) {
     // Assign data to the view
-    $this->data = $this->get('Data');
     $this->items = $this->get('Items');
     $this->pagination = $this->get('Pagination');
     $this->state = $this->get('State');
 
     // Get picture image url
-    if($this->data->picture) {
-      $this->data->picture = JHTML::_('image.site', '', '/images/club/', $this->data->picture, 	'/images/club/', $this->data->name . ' picture', 'align="middle" width="250" height="209"');
+    if($this->items[0]->picture) {
+      $this->items[0]->picture = JHTML::_('image.site', '', '/images/club/', $this->items[0]->picture, 	'/images/club/', $this->items[0]->name . ' picture', 'align="middle" width="250" height="209"');
     } else {
-      $this->data->picture = JText::_("COM_CLUB_NO_PICTURE_AVAILABLE");
+      $this->items[0]->picture = JText::_("COM_CLUB_NO_PICTURE_AVAILABLE");
     }
 
     // Check for errors.

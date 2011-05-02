@@ -224,7 +224,7 @@ $userId         = $user->get('id');
 </tr>
 <?php endif; ?>
 
-<?php if ( $this->item->name ) : ?>
+<?php if ( $this->item->first_name || $this->item->middle_name || $this->item->last_name) : ?>
 <tr>
 <td>
   <?php echo JText::_('COM_CLUB_MEMBER_NAME_LABEL'); ?>
@@ -297,5 +297,7 @@ $userId         = $user->get('id');
 </div> <!-- /club_member_right -->
 </div> <!-- /club_member_bottom -->
 
+<div id="club_member_footer" style="clear:both">
 <br/><br/>
 <small><?php echo JText::_("COM_CLUB_DESIGNED_BY")?><a href="http://danieljamesscott.org">http://danieljamesscott.org</a></small>
+</div> <!-- /club_member_footer -->

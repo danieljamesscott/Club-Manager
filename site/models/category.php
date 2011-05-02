@@ -19,7 +19,7 @@ class ClubModelCategory extends JModelList {
     $db = JFactory::getDBO();
     $query = $db->getQuery(true);
     // Select some fields
-    $query->select('#__club_category_members.id as member_id, #__club_category_members.category_id, #__club_category.name as name, #__club_category_members.member_id, #__club_member.name as member_name, #__club_member.number as member_number, #__club_category_members.published,#__club_category_members.checked_out,#__club_category_members.checked_out_time,#__club_category_members.editor,#__club_category_members.ordering,#__club_category_members.params,#__club_category_members.access');
+    $query->select('#__club_category_members.id as member_id, #__club_category_members.category_id, #__club_category.name as name, #__club_category.picture as picture, #__club_category.trainer as trainer, #__club_category.coach as coach, #__club_category.manager as manager, #__club_category_members.member_id, #__club_member.name as member_name, #__club_member.number as member_number, #__club_category_members.published,#__club_category_members.checked_out,#__club_category_members.checked_out_time,#__club_category_members.editor,#__club_category_members.ordering,#__club_category_members.params,#__club_category_members.access');
 
     // From the club table
     $query->from('#__club_category');

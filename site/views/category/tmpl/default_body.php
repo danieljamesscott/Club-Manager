@@ -6,9 +6,6 @@ defined('_JEXEC') or die('Restricted Access');
 ?>
   <tr class="row<?php echo $i % 2; ?>">
     <td>
-      <?php echo $item->name; ?>
-    </td>
-    <td>
       <?php echo $item->member_number; ?>
     </td>
     <td>

@@ -3,7 +3,7 @@
 defined('_JEXEC') or die('Restricted Access');
 ?>
 <?php foreach($this->items as $i => $item):
-#$canCheckin = $user->authorise('core.manage', 'com_checkin') || $item->checked_out == $userId || $item->checked_out == 0;
+$canCheckin = $this->user->authorise('core.manage', 'com_checkin') || $item->checked_out == $userId || $item->checked_out == 0;
 ?>
   <tr class="row<?php echo $i % 2; ?>">
     <td>

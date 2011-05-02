@@ -5,11 +5,11 @@ defined('_JEXEC') or die('Restricted Access');
 // load tooltip behavior
 JHtml::_('behavior.tooltip');
 
-$user           = JFactory::getUser();
-$userId         = $user->get('id');
+$this->user     = JFactory::getUser();
+$userId         = $this->user->get('id');
 $listOrder      = $this->escape($this->state->get('list.ordering'));
 $listDirn       = $this->escape($this->state->get('list.direction'));
-$canOrder       = $user->authorise('core.edit.state', 'com_club.clubcategories');
+$canOrder       = $this->user->authorise('core.edit.state', 'com_club.clubcategories');
 $saveOrder      = $listOrder == 'a.ordering';
 ?>
 <form action="<?php echo JRoute::_('index.php?option=com_club'); ?>" method="post" name="adminForm">

@@ -125,16 +125,16 @@ INSERT INTO #__club_categories (club_id, category_id, alias) VALUES
   (1, 2, 'alias2'),
   (2, 3, 'alias3');
 
-INSERT INTO #__club_member (id, alias, name) VALUES
-  (1, 'testmember1', 'Test Member 1'),
-  (2, 'testmember2', 'Test Member 2'),
-  (3, 'testmember3', 'Test Member 3');
+INSERT INTO #__club_member (id, alias, name, number) VALUES
+  (1, 'testmember1', 'Test Member 1', 1),
+  (2, 'testmember2', 'Test Member 2', 2),
+  (3, 'testmember3', 'Test Member 3', 3);
 
 INSERT INTO #__club_member (id, alias, name, number, position, residence, nicknames, dob, nationality, club_history, honours, about, quote, home_town, fave_player, height_weight, school_attending, graduating_class, gpa, sat_act, level_rating, decision_makers, travel_schedule, hobbies, conference, picture, leaving_date, joining_date, first_name, middle_name, last_name) VALUES (4, 'testmember4', 'Test Member 4', 5, 'Attack', 'Home', 'Testy', '1990-01-01', 'National', 'Old Club', 'Winner', 'Me', 'Quote Me', 'Home town', 'Me', 'Tall, heavy', 'School', 'Class of ?', 'GPA', 'SAT', 'Level', 'Decision', 'Schedule', 'Hobbies', 'Conference', 'pic', '2010-04-25', '2011-05-25', 'First', 'Middle', 'Last');
 
 INSERT INTO #__club_category_members (category_id, member_id) VALUES
   (1, 1),
   (2, 2),
-  (3, 3),
-  (3, 4);
+  (2, 3),
+  (2, 4);
 

@@ -4,7 +4,7 @@ defined('_JEXEC') or die('Restricted access');
 
 // import Joomla view library
 jimport('joomla.application.component.view');
-#JModel::addIncludePath(JPATH_ADMINISTRATOR.DS.'components'.DS.'com_club'.DS.'models');
+
 /**
  * Clubs View
  */
@@ -19,6 +19,10 @@ class ClubViewClubs extends JView {
    * @return void
    */
   function display($tpl = null) {
+    require_once JPATH_COMPONENT.'/helpers/club.php';
+    // Load the submenu.
+    ClubHelper::addSubmenu(JRequest::getCmd('view', 'clubs'));
+
     // Get data from the model
     $this->items = $this->get('Items');
     $this->pagination = $this->get('Pagination');

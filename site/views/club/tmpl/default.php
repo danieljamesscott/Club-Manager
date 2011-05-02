@@ -4,9 +4,6 @@ defined('_JEXEC') or die('Restricted Access');
 
 // load tooltip behavior
 JHtml::_('behavior.tooltip');
-
-$user           = JFactory::getUser();
-$userId         = $user->get('id');
 ?>
 <table class="category">
   <thead><?php echo $this->loadTemplate('head');?></thead>

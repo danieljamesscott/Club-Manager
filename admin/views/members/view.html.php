@@ -19,6 +19,10 @@ class ClubViewMembers extends JView {
    * @return void
    */
   function display($tpl = null) {
+    require_once JPATH_COMPONENT.'/helpers/club.php';
+    // Load the submenu.
+    ClubHelper::addSubmenu(JRequest::getCmd('view', 'members'));
+
     // Get data from the model
     $this->items = $this->get('Items');
     $this->pagination = $this->get('Pagination');
