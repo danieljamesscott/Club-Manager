@@ -3,6 +3,7 @@
 defined('_JEXEC') or die('Restricted access');
 JHtml::_('behavior.tooltip');
 JHtml::_('behavior.formvalidation');
+
 ?>
 <form action="<?php echo JRoute::_('index.php?option=com_club&layout=edit&id='.(int) $this->item->id); ?>" method="post" name="adminForm" id="member-form" class="form-validate" >
   <fieldset class="adminform">
