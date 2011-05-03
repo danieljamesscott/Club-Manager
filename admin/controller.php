@@ -18,6 +18,9 @@ class ClubController extends JController {
     // set default view if not set
     JRequest::setVar('view', JRequest::getCmd('view', 'Clubs'));
 
+    $lang = JFactory::getLanguage();
+    $lang->load('com_club', JPATH_ROOT);
+
     // call parent behavior
     parent::display($cachable);
   }

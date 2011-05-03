@@ -60,6 +60,7 @@
       <folder>helpers</folder>
     </files>
     <languages folder="admin">
+      <language tag="en-GB">language/en-GB/en-GB.com_club.ini</language>
       <language tag="en-GB">language/en-GB/en-GB.com_club.sys.ini</language>
     </languages>
   </administration>
