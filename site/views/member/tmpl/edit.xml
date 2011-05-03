@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<metadata>
+  <layout title="COM_CLUB_MEMBER_VIEW_EDIT_TITLE" option="COM_CLUB_EDIT_DEFAULT_OPTION">
+    <help key = "COM_CLUB_MEMBER_EDIT" />
+    <message>COM_CLUB_MEMBER_VIEW_EDIT_DESC</message>
+  </layout>
+</metadata>
