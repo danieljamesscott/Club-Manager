@@ -2,13 +2,13 @@
 <extension type="component" version="1.6.0" method="upgrade">
 
   <name>COM_CLUB</name>
-  <creationDate>April 2011</creationDate>
+  <creationDate>May 2011</creationDate>
   <author>Daniel Scott</author>
   <authorEmail>dan@danieljamesscott.org</authorEmail>
   <authorUrl>http://danieljamesscott.org</authorUrl>
   <copyright>Copyright Daniel Scott 2011</copyright>
   <license>GPL V3 or later</license>
-  <version>0.6</version>
+  <version>1.0</version>
   <description>COM_CLUB_DESCRIPTION</description>
 
   <install>
@@ -64,4 +64,8 @@
       <language tag="en-GB">language/en-GB/en-GB.com_club.sys.ini</language>
     </languages>
   </administration>
+
+  <updateservers>
+    <server type="extension" priority="1" name="Club Manager Update Site">http://danieljamesscott.org/joomla_extensions/update/com_club-update.xml</server>
+  </updateservers>
 </extension>

@@ -23,9 +23,9 @@ class ClubViewCategory extends JView {
 
     // Get picture image url
     if($this->items[0]->picture) {
-      $this->items[0]->picture = JHTML::_('image.site', '', '/images/club/', $this->items[0]->picture, 	'/images/club/', $this->items[0]->name . ' picture', 'align="middle" width="250" height="209"');
+      $this->items[0]->picture_html = JHtml::_('image', '/' . $this->items[0]->picture, $this->items[0]->name . ' picture', 'align="middle" width="250" height="209"', true);
     } else {
-      $this->items[0]->picture = JText::_("COM_CLUB_NO_PICTURE_AVAILABLE");
+      $this->items[0]->picture_html = JText::_("COM_CLUB_NO_PICTURE_AVAILABLE");
     }
 
     // Check for errors.

@@ -16,8 +16,8 @@ $userId         = $user->get('id');
 </div> <!-- /club_category_head -->
 <div id="club_category_left" style="width:50%;float:left;">
 
-<?php if ( $this->items[0]->picture ) : ?>
-<?php echo $this->items[0]->picture; ?>
+<?php if ( $this->items[0]->picture_html ) : ?>
+<?php echo $this->items[0]->picture_html; ?>
 <?php endif; ?>
 
 </div> <!-- /club_category_left -->
