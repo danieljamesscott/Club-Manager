@@ -7,6 +7,7 @@ JHtml::_('behavior.tooltip');
 
 $user           = JFactory::getUser();
 $userId         = $user->get('id');
+date_default_timezone_set('UTC');
 ?>
 
 <div id="club_member">
@@ -64,7 +65,7 @@ $userId         = $user->get('id');
   <?php echo JText::_('COM_CLUB_MEMBER_DOB_LABEL'); ?>
 </td>
 <td>
-  <?php echo $this->item->dob; ?>
+<?php echo strftime('%x', strtotime($this->item->dob)); ?>
 </td>
 </tr>
 <?php endif; ?>
@@ -130,7 +131,7 @@ $userId         = $user->get('id');
   <?php echo JText::_('COM_CLUB_MEMBER_JOINING_DATE_LABEL'); ?>
 </td>
 <td>
-  <?php echo $this->item->joining_date; ?>
+<?php echo strftime('%x', strtotime($this->item->joining_date)); ?>
 </td>
 </tr>
 <?php endif; ?>
@@ -141,7 +142,7 @@ $userId         = $user->get('id');
   <?php echo JText::_('COM_CLUB_MEMBER_LEAVING_DATE_LABEL'); ?>
 </td>
 <td>
-  <?php echo $this->item->leaving_date; ?>
+<?php echo strftime('%x', strtotime($this->item->leaving_date)); ?>
 </td>
 </tr>
 <?php endif; ?>
