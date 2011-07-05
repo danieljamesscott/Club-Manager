@@ -302,3 +302,4 @@ date_default_timezone_set('UTC');
 <br/><br/>
 <small><?php echo JText::_("COM_CLUB_DESIGNED_BY")?><a href="http://danieljamesscott.org">http://danieljamesscott.org</a></small>
 </div> <!-- /club_member_footer -->
+</div> <!-- /club_member -->
