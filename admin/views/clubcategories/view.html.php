@@ -46,7 +46,7 @@ class ClubViewClubCategories extends JView {
    */
   protected function addToolBar() {
     JToolBarHelper::title(JText::_('COM_CLUB_MANAGER_CLUBCATEGORIES'));
-    JToolBarHelper::deleteList('', 'clubcategory.delete');
+    JToolBarHelper::deleteList('', 'clubcategories.delete');
     JToolBarHelper::editList('clubcategory.edit');
     JToolBarHelper::addNew('clubcategory.add');
   }
