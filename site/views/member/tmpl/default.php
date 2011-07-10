@@ -59,7 +59,7 @@ date_default_timezone_set('UTC');
 </tr>
 <?php endif; ?>
 
-<?php if ( $this->item->dob ) : ?>
+<?php if ( $this->item->dob && $this->item->dob != '0000-00-00' ) : ?>
 <tr>
 <td>
   <?php echo JText::_('COM_CLUB_MEMBER_DOB_LABEL'); ?>
@@ -125,7 +125,7 @@ date_default_timezone_set('UTC');
 </tr>
 <?php endif; ?>
 
-<?php if ( $this->item->joining_date ) : ?>
+<?php if ( $this->item->joining_date && $this->item->joining_date != '0000-00-00' ) : ?>
 <tr>
 <td>
   <?php echo JText::_('COM_CLUB_MEMBER_JOINING_DATE_LABEL'); ?>
@@ -136,7 +136,7 @@ date_default_timezone_set('UTC');
 </tr>
 <?php endif; ?>
 
-<?php if ( $this->item->leaving_date ) : ?>
+<?php if ( $this->item->leaving_date && $this->item->leaving_date != '0000-00-00' ) : ?>
 <tr>
 <td>
   <?php echo JText::_('COM_CLUB_MEMBER_LEAVING_DATE_LABEL'); ?>

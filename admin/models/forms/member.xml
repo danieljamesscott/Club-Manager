@@ -39,6 +39,7 @@
         size="40"
         class="inputbox validate-number"
         validate="number"
+        required="true"
         default=""
         />
     <field
@@ -79,7 +80,7 @@
         size="40"
         class="inputbox validate-date"
         validate="date"
-        default=""
+        default="0000-00-00"
         />
     <field
         name="nationality"
@@ -250,7 +251,7 @@
         size="40"
         class="inputbox validate-date"
         validate="date"
-        default=""
+        default="0000-00-00"
         />
     <field
         name="joining_date"
@@ -260,7 +261,7 @@
         size="40"
         class="inputbox validate-date"
         validate="date"
-        default=""
+        default="0000-00-00"
         />
     <field
         name="first_name"
