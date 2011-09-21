@@ -88,7 +88,7 @@
         label="COM_CLUB_MEMBER_NATIONALITY_LABEL"
         description="COM_CLUB_MEMBER_NATIONALITY_DESC"
         size="40"
-        class="inputbox validate-name"
+        class="input validate-name"
         validate="name"
         default=""
         />
@@ -97,8 +97,7 @@
         type="textarea"
         label="COM_CLUB_MEMBER_CLUB_HISTORY_LABEL"
         description="COM_CLUB_MEMBER_CLUB_HISTORY_DESC"
-        class="inputbox validate-name"
-        validate="name"
+	filter="safehtml"
         default=""
         />
     <field
@@ -106,8 +105,7 @@
         type="textarea"
         label="COM_CLUB_MEMBER_HONOURS_LABEL"
         description="COM_CLUB_MEMBER_HONOURS_DESC"
-        class="inputbox validate-name"
-        validate="name"
+	filter="safehtml"
         default=""
         />
     <field
@@ -115,8 +113,7 @@
         type="textarea"
         label="COM_CLUB_MEMBER_ABOUT_LABEL"
         description="COM_CLUB_MEMBER_ABOUT_DESC"
-        class="inputbox validate-name"
-        validate="name"
+	filter="safehtml"
         default=""
         />
     <field
@@ -124,8 +121,7 @@
         type="textarea"
         label="COM_CLUB_MEMBER_QUOTE_LABEL"
         description="COM_CLUB_MEMBER_QUOTE_DESC"
-        class="inputbox validate-name"
-        validate="name"
+	filter="safehtml"
         default=""
         />
     <field
@@ -134,8 +130,7 @@
         label="COM_CLUB_MEMBER_HOME_TOWN_LABEL"
         description="COM_CLUB_MEMBER_HOME_TOWN_DESC"
         size="40"
-        class="inputbox validate-name"
-        validate="name"
+	filter="safehtml"
         default=""
         />
     <field
@@ -143,8 +138,7 @@
         type="textarea"
         label="COM_CLUB_MEMBER_FAVE_PLAYER_LABEL"
         description="COM_CLUB_MEMBER_FAVE_PLAYER_DESC"
-        class="inputbox validate-name"
-        validate="name"
+	filter="safehtml"
         default=""
         />
     <field
@@ -153,8 +147,7 @@
         label="COM_CLUB_MEMBER_HEIGHT_WEIGHT_LABEL"
         description="COM_CLUB_MEMBER_HEIGHT_WEIGHT_DESC"
         size="40"
-        class="inputbox validate-name"
-        validate="name"
+	filter="safehtml"
         default=""
         />
     <field
@@ -163,8 +156,7 @@
         label="COM_CLUB_MEMBER_SCHOOL_ATTENDING_LABEL"
         description="COM_CLUB_MEMBER_SCHOOL_ATTENDING_DESC"
         size="40"
-        class="inputbox validate-name"
-        validate="name"
+	filter="safehtml"
         default=""
         />
     <field
@@ -173,8 +165,7 @@
         label="COM_CLUB_MEMBER_GRADUATING_CLASS_LABEL"
         description="COM_CLUB_MEMBER_GRADUATING_CLASS_DESC"
         size="40"
-        class="inputbox validate-name"
-        validate="name"
+	filter="safehtml"
         default=""
         />
     <field
@@ -183,8 +174,7 @@
         label="COM_CLUB_MEMBER_GPA_LABEL"
         description="COM_CLUB_MEMBER_GPA_DESC"
         size="40"
-        class="inputbox validate-name"
-        validate="name"
+	filter="safehtml"
         default=""
         />
     <field
@@ -193,8 +183,7 @@
         label="COM_CLUB_MEMBER_SAT_ACT_LABEL"
         description="COM_CLUB_MEMBER_SAT_ACT_DESC"
         size="40"
-        class="inputbox validate-name"
-        validate="name"
+	filter="safehtml"
         default=""
         />
     <field
@@ -203,8 +192,7 @@
         label="COM_CLUB_MEMBER_LEVEL_RATING_LABEL"
         description="COM_CLUB_MEMBER_LEVEL_RATING_DESC"
         size="40"
-        class="inputbox validate-name"
-        validate="name"
+	filter="safehtml"
         default=""
         />
     <field
@@ -212,8 +200,7 @@
         type="textarea"
         label="COM_CLUB_MEMBER_DECISION_MAKERS_LABEL"
         description="COM_CLUB_MEMBER_DECISION_MAKERS_DESC"
-        class="inputbox validate-name"
-        validate="name"
+	filter="safehtml"
         default=""
         />
     <field
@@ -221,8 +208,7 @@
         type="textarea"
         label="COM_CLUB_MEMBER_TRAVEL_SCHEDULE_LABEL"
         description="COM_CLUB_MEMBER_TRAVEL_SCHEDULE_DESC"
-        class="inputbox validate-name"
-        validate="name"
+	filter="safehtml"
         default=""
         />
     <field
@@ -230,8 +216,7 @@
         type="textarea"
         label="COM_CLUB_MEMBER_HOBBIES_LABEL"
         description="COM_CLUB_MEMBER_HOBBIES_DESC"
-        class="inputbox validate-name"
-        validate="name"
+	filter="safehtml"
         default=""
         />
     <field
@@ -239,8 +224,7 @@
         type="textarea"
         label="COM_CLUB_MEMBER_CONFERENCE_LABEL"
         description="COM_CLUB_MEMBER_CONFERENCE_DESC"
-        class="inputbox validate-name"
-        validate="name"
+	filter="safehtml"
         default=""
         />
     <field
